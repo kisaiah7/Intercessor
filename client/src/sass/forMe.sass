@@ -1,0 +1,200 @@
+@import "./variables.sass"
+
+.form
+  &__field
+    background: none
+    border: none
+
+    width: 90%
+    padding: 0.5em
+
+    color: var(--red)
+    font-size: 1em
+    font: inherit
+
+    transition: 0.5s ease
+
+    &:focus
+      outline: none
+      color: #fff
+
+.prayerForm
+  display: flex
+  flex-direction: row
+  align-items: center
+
+  &.enterTransition
+    animation: fadeIn 1s ease forwards
+
+  &__favGroups
+    width: 10%
+    height: 100vh
+
+    margin: 12% 0 0 -5%
+    padding: 3em 5em 3em 0
+
+    animation: floating-sm 2s ease-in-out infinite alternate
+
+    &-header
+      color: var(--red)
+      margin-top: 70px
+      margin-bottom: -20px
+      font-style: italic
+
+    &-group
+      width: 100%
+
+      background-color: var(--secondary)
+      border: 1px solid var(--red)
+      padding: 0 1em
+      margin: 2em 0
+      box-shadow: 7px 7px var(--shadow)
+      border-radius: 5px
+
+      color: var(--red)
+
+      cursor: pointer
+      transition: 0.5s ease-in-out
+
+      &:hover
+        border: 1px dashed var(--gold)
+        color: var(--gold)
+
+  &__form
+    width: 70vw
+
+    background-color: var(--secondary)
+    box-shadow: 20px 20px var(--shadow)
+    border: 1px solid var(--red)
+    border-radius: 5px
+
+    color: var(--red)
+    font-style: italic
+    z-index: 3
+
+    animation: floating-sm 2s ease-in-out infinite alternate
+
+    &-top
+      display: flex
+      flex-direction: row
+
+      &-date
+        width: 15%
+
+        border-bottom: 1px solid var(--red)
+        border-right: 1px solid var(--red)
+        padding: 0.8em 1em
+
+        color: var(--red)
+
+        &:focus
+          color: var(--red)
+
+      &-title
+        width: 100%
+
+        border-bottom: 1px solid var(--red)
+        padding: 0.3em 2em
+        background: none
+
+        &:focus
+          color: var(--red)
+
+    &-bottom
+      display: flex
+      flex-direction: column
+
+      &-body
+        height: 40vh
+        width: 95.2%
+
+        padding: 2em
+        background-color: var(--secondary)
+        border: none
+        border-bottom: 1px solid var(--red)
+
+        letter-spacing: 1px
+        overflow-y: scroll
+        resize: none
+
+        &:focus
+          color: var(--red)
+
+        &::-webkit-scrollbar
+          width: 1em
+          background-color: var(--primary)
+          border-left: 1px solid var(--red)
+
+        &::-webkit-scrollbar-thumb
+          background-color: var(--red)
+
+        .force-overflow
+          min-height: 50px
+
+      &-recipients
+        padding: 0.5em 2em 0.5em 2em
+
+        ul.foundQueryList
+          list-style: none
+          font-size: 0.9em
+          letter-spacing: 1px
+          margin-right: 4em
+
+          li
+            display: inline
+
+            label
+              display: inline-block
+              width: 100%
+              background-color: var(--secondary)
+              border: 1px solid var(--red)
+              color: var(--red)
+              border-radius: 1px
+              white-space: nowrap
+              margin: 3px 0px
+              transition: 1s ease
+              padding: 8px 12px
+              cursor: pointer
+
+              &.selected
+                width: auto
+                margin: 0 3px
+
+              &:hover
+                border: 1px solid var(--primary)
+                background-color: var(--primary)
+                color: var(--red-one)
+
+            input[type="checkbox"]
+              display: absolute
+              position: absolute
+              opacity: 0
+
+              &:checked + label
+                border: 1px solid var(--red)
+                background-color: var(--red)
+                color: var(--primary)
+                transition: 1s ease
+
+        .foundQueryList
+          &__header
+            font: inherit
+            font-size: 0.8em
+            color: var(--red)
+            margin-left: 40px
+            border-top: 1px dashed var(--red)
+            padding-top: 15px
+
+      .intercedeBtn
+        padding-left: 2em
+        background-color: var(--red)
+        color: var(--primary)
+        cursor: pointer
+        border-top: 1px solid var(--red)
+        border-radius: 5px
+
+        transition: 0.5s ease-in-out
+
+        &:hover
+          color: var(--red)
+          background-color: var(--shadow)

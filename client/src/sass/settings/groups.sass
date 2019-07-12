@@ -1,0 +1,238 @@
+@import "../variables.sass"
+
+.settings
+  &__groups
+    width: 588px
+    padding: 20px 0
+    max-height: 600px
+
+    overflow-y: auto
+
+    &::-webkit-scrollbar
+      width: 1em
+      background-color: var(--primary)
+      border: 1px solid var(--accent)
+      border-radius: 5px
+
+    &::-webkit-scrollbar-thumb
+      background-color: var(--accent)
+
+
+    /* INPUT FORMS
+     * includes textarea for creating
+     * new group's description */
+    &__form
+      &__field
+        @include settings_formfield
+
+        &.description
+          height: 3em
+
+          &:focus
+            color: var(--accent)
+
+          &::-webkit-scrollbar
+            width: 1em
+            background-color: var(--primary)
+            border-left: 1px solid var(--accent)
+            border-radius: 0 5px 0 0
+
+          &::-webkit-scrollbar-thumb
+            background-color: var(--accent)
+
+          .force-overflow
+            min-height: 50px
+
+        @media (max-width: 700px)
+          font-size: 1em
+
+        &:hover
+          background: var(--primary-one)
+          color: #fff
+
+    /* GENERAL Group Screen
+     * Renders user's groups
+     * Navigate to create group
+     * Search database for groups */
+
+    &-title
+      margin: 0 40px 40px 65px
+
+      font: inherit
+      color: var(--accent-one)
+      font-size: 0.9em
+      letter-spacing: 0.5px
+      font-style: italic
+
+    &-subtitle
+      font: inherit
+      margin-left: 65px
+      color: var(--accent-one)
+      font-size: 0.9em
+      letter-spacing: 4px
+
+    &-togglebtn
+      width: 480px
+
+      font: inherit
+      font-size: 0.9em
+      color: var(--accent)
+      text-align: right
+      letter-spacing: 2px
+
+      border: 1px solid var(--accent)
+      border-radius: 5px
+
+      outline: 0
+      margin: 0 0 0px 65px
+      padding: 1em
+      background-color: var(--primary)
+
+      transition: 0.5s ease
+      cursor: pointer
+
+      &:hover
+        background-color: var(--accent)
+        color: var(--secondary)
+
+    &-groupView
+      width: 450px
+      height: 50px
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+
+      margin: 10px 0 30px 65px
+      padding: 0.1em 1em
+      border-radius: 5px
+      border: 1px solid var(--accent)
+
+      color: var(--accent)
+      font-size: 0.9em
+      letter-spacing: 2px
+
+      background-color: var(--primary)
+      animation: fadeIn 1s ease-in-out forwards
+      cursor: pointer
+      transition: 0.5s ease
+
+      &:hover
+        background-color: var(--secondary)
+
+      &.isFavorite
+        border: 1px solid var(--gold)
+
+        &:hover
+          color: var(--gold)
+
+    /* CREATE Group Screen
+     * Search database for users
+     * Render users as checkboxes
+     * Search database for groups */
+
+    &-header
+      font: inherit
+      font-size: 0.8em
+      color: var(--accent)
+      margin-left: 65px
+      margin-bottom: -20px
+
+    &__foundUserDiv
+      margin: -15px 0 -25px 45px
+      font-size: 0.9em
+
+      ul.foundUserList
+        list-style: none
+        padding: 20px
+        font-size: 0.9em
+        letter-spacing: 1px
+
+        li
+          display: inline
+
+          label
+            display: inline-block
+            width: 23vw
+            background-color: var(--secondary)
+            border: 1px solid var(--accent-one)
+            border-radius: 5px
+            color: var(--accent-one)
+            border-radius: 1px
+            white-space: nowrap
+            margin: 3px 0px
+            -webkit-touch-callout: none
+            -webkit-user-select: none
+            -moz-user-select: none
+            -ms-user-select: none
+            user-select: none
+            -webkit-tap-highlight-color: transparent
+            transition: 1s ease
+
+            &.selected
+              width: auto
+              margin: 0 3px
+
+      ul.foundUserList li label
+        padding: 8px 12px
+        cursor: pointer
+
+        &:hover
+          border: 1px solid var(--primary)
+          background-color: var(--primary)
+          color: var(--accent-one)
+
+      ul.foundUserList li input[type="checkbox"]
+        display: absolute
+        position: absolute
+        opacity: 0
+
+        &:checked + label
+          border: 1px solid var(--accent)
+          background-color: var(--accent)
+          color: var(--primary)
+          transition: 1s ease
+    &__form
+      &-privacy
+        display: grid
+        grid-template-columns: 1fr 3fr
+        height: 30px
+
+        &-btn
+          margin-left: 3.7em
+          margin-top: 8px
+
+          label
+            display: inline
+            background-color: var(--secondary)
+            border: 1px solid var(--red)
+            color: var(--red)
+            font-size: 0.8em
+            border-radius: 1px
+            white-space: nowrap
+            margin: 0 4px
+            transition: 0.5s ease
+            padding: 8px
+            cursor: pointer
+
+            &.selected
+              width: auto
+              margin: 0 3px
+
+            &:hover
+              border: 1px solid var(--primary)
+              background-color: var(--primary)
+              color: var(--red-one)
+
+          input[type="checkbox"]
+            display: absolute
+            position: absolute
+            opacity: 0
+
+            &:checked + label
+              border: 1px solid var(--red)
+              background-color: var(--red)
+              color: var(--primary)
+              transition: 0.5s ease
+
+    &-createbtn
+      @include settings_btn

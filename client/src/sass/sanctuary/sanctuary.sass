@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css?family=Cutive+Mono")
+@import "../variables.sass"
+
+.sanctuaryContainer
+  height: 100vh
+  width: 100vw
+
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: center
+
+  background-color: var(--primary)
+
+  .prompt
+    position: absolute
+    left: 3%
+    bottom: 5%
+
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+
+    padding-left: 10px
+    border-left: 1px solid var(--red)
+    border-bottom: 1px solid var(--red)
+
+    color: var(--accent)
+
+    &.fadeIn
+      animation: fadeIn 0.75s ease-in-out
+
+    &.fadeOut
+      animation: fadeOut 1s ease-in-out forwards
+
+    p
+      font-style: italic
+      font-weight: 100
+      font-size: 0.9em
+      margin: 5px 0
+
+    &__timer
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      padding: 10px 0
+
+      border-bottom: 1px dashed var(--red)
+
+      &-button
+        outline: 0
+        border: none
+
+        background: none
+        padding: 0
+
+        font: inherit
+        font-size: 0.9em
+        color: var(--accent)
+        letter-spacing: 0.1em
+
+        transition: 0.5s ease-in-out
+        cursor: pointer
+
+        &:hover
+          color: var(--red)
+
+      &-selected
+        color: var(--accent)
+
+    &__topics
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+
+      padding: 10px 0
+
+      &-button
+        outline: 0
+        border: none
+
+        background: none
+        padding: 0
+
+        font: inherit
+        font-size: 0.9em
+        color: var(--accent)
+        letter-spacing: 0.1em
+
+        transition: 0.5s ease-in-out
+        cursor: pointer
+
+        &:hover
+          color: var(--red)
+
+      &-selected
+        color: var(--accent)
+
+    &__setTimer
+      padding: 5px 0
+      border-bottom: 1px dashed var(--accent)
+
+      &-heading
+        color: var(--red)
+        padding-bottom: 10px
+        letter-spacing: 2px
+
+      &-backBtn
+        position: absolute
+        top: 4%
+        left: 5%
+        background-color: var(--primary)
+        outline: none
+        border: 1px solid var(--red)
+        color: var(--red)
+        border-radius: 2px
+        letter-spacing: 2px
+        transition: 0.5s ease
+        cursor: pointer
+
+        &:hover
+          border: 1px solid var(--accent)
+          color: var(--accent)
+
+      &__minsec
+        display: flex
+        flex-direction: row
+        margin: 15px
+        justify-content: center
+
+        &-input
+          background-color: var(--primary)
+          border: 1px solid var(--accent)
+          outline: none
+          padding: 0.5em 1em
+          margin-right: 5px
+          width: 20%
+          border-radius: 5px
+          color: var(--green)
+          font-size: 0.9em
+          font: inherit
+          cursor: pointer
+
+        input[type=radio]
+          display: none
+
+        input[type=radio] + label
+          height: 15px
+          display: inline-block
+          margin: 5px
+          padding: 15px
+          background-color: var(--primary)
+          border: 1px solid var(--accent)
+          transition: 0.5s ease-in-out
+          cursor: pointer
+
+          &:hover
+           background-color: var(--secondary)
+
+        input[type=radio]:checked + label
+          background-image: none
+          background-color: var(--accent)
+          color: var(--primary)
+
+      &-setBtn
+        background: none
+        width: 90%
+        color: var(--red)
+        margin: 10px 0
+        border: none
+        border-top: 1px solid var(--red)
+        padding: 0.8em
+        font-size: 0.8em
+        outline: none
+        text-align: right
+        font: inherit
+        font-size: 0.9em
+        letter-spacing: 2px
+        transition: 0.5s ease
+        cursor: pointer
+
+        &:hover
+          background-color: var(--red)
+          color: var(--primary)
+
+    &__setTopics
+      width: 340px
+      justify-content: center
+      display: flex
+      flex-direction: column
+
+      &-heading
+        color: var(--red)
+        padding-bottom: 10px
+        letter-spacing: 2px
+
+      &-backBtn
+        position: absolute
+        top: 1.5%
+        left: 5%
+        background-color: var(--primary)
+        outline: none
+        border: 1px solid var(--red)
+        color: var(--red)
+        border-radius: 2px
+        letter-spacing: 2px
+        transition: 0.5s ease
+        cursor: pointer
+
+        &:hover
+          border: 1px solid var(--accent)
+          color: var(--accent)
+
+      .textarea
+        height: 300px
+        padding: 2em
+        background-color: var(--shadow)
+        border: none
+        border-radius: 1px
+        margin-left: 3px
+
+        font-size: 0.9em
+        font: inherit
+        color: var(--secondary)
+        white-space: pre-wrap
+
+        overflow-y: scroll
+        resize: none
+        outline: none
+        white-space: pre-line
+
+        &:focus
+          color: var(--primary)
+
+        &::-webkit-scrollbar
+          width: 1em
+          background-color: var(--secondary)
+
+        &::-webkit-scrollbar-thumb
+          background-color: var(--accent)
+
+        .force-overflow
+          min-height: 50px
+
+      &-setBtn
+        background: none
+        width: 99%
+        color: var(--red)
+        margin: 10px 3px
+        border: none
+        border-top: 1px solid var(--red)
+        padding: 0.8em
+        font-size: 0.8em
+        outline: none
+        text-align: right
+        font: inherit
+        font-size: 0.9em
+        letter-spacing: 2px
+        transition: 0.5s ease
+        cursor: pointer
+
+        &:hover
+          background-color: var(--red)
+          color: var(--primary)
+
+  .window__top
+    width: 10em
+    height: 18em
+
+    box-shadow: -10px 0 var(--primary-one)
+    border-radius: 5em 5em 0 0
+
+    background-color: var(--secondary)
+
+  .window__sill
+    width: 10em
+    height: 4em
+
+    border-radius: 0 0 10px 10px
+    box-shadow: -10px 0 var(--green-one)
+
+    background-color: var(--green)
+
+  .bibleverse
+    max-width: 50%
+
+    position: absolute
+    bottom: 5%
+    right: 3%
+
+    color: var(--accent-one)
+    font-style: italic
+    text-align: right
+
+    padding-right: 20px
+    border-right: 1px solid var(--red)
+
+    &__ref
+      color: var(--red)

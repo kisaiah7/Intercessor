@@ -1,0 +1,278 @@
+//** variables **//
+$accent: #4579D4
+$accent-dark: #74b4a3
+$accent-1: darken($accent, 10%)
+$accent-1-dark: darken($accent-dark, 10%)
+$primary: #DCDCDD
+$primary-dark: #2f3948
+$primary-1: darken($primary, 10%)
+$primary-1-dark: darken($primary-dark, 10%)
+$primary-2: lighten($primary, 40%)
+$primary-2-dark: lighten($primary-dark, 40%)
+
+$secondary: #E5E5E5
+$secondary-dark: #2B333E
+$secondary-1: lighten($secondary, 2%)
+$secondary-1-dark: lighten($secondary-dark, 2%)
+
+$shadow: #394A60
+$shadow-dark: #222831
+
+$gold: #E58500
+$gold-1: darken($gold, 15%)
+$gold-dark: #BBA34F
+$gold-1-dark: darken($gold-dark, 15%)
+$green-dark: #74b4a3
+$green: #4579D4
+$green-1-dark: darken($green-dark, 10%)
+$green-1: darken($green, 10%)
+$red-dark: #B47474
+$red: #E01854
+$red-1-dark: darken($red-dark, 10%)
+$red-1: darken($red, 10%)
+$purple-dark: #8874B4
+$purple: #D62CC2
+$purple-1-dark: darken($purple-dark, 10%)
+$purple-1: darken($purple, 10%)
+
+//** mixins **//
+@mixin btn
+  text-decoration: none !important
+  padding: 10px
+  width: 45%
+  text-align: center
+
+  border: none
+  outline: none
+  background: none
+
+  cursor: pointer
+  transition: 500ms ease
+
+@mixin alert
+  background-color: var(--primary)
+
+  font-size: 1em
+  color: var(--accent)
+
+  z-index: 3
+
+@mixin answers
+  color: var(--accent)
+  text-decoration: none
+  font-size: 1em
+  font: inherit
+  text-align: center
+  color: var(--primary)
+
+  outline: none
+  margin: 0
+  border: none
+  background: none
+  padding: 3px 70px 6px 70px
+
+  transition: 1s ease
+  cursor: pointer
+
+@mixin settings_btn
+  margin: 20px 0 30px 65px
+  padding: 0.8em
+
+  width: 487px
+
+  border: none
+  border-top: 1px solid var(--gold)
+  background-color: var(--secondary)
+  color: var(--gold)
+  opacity: 0
+  outline: none
+
+  text-decoration: none !important
+  font: inherit
+  font-size: 0.9em
+  text-align: right
+  letter-spacing: 2px
+
+  cursor: pointer
+  transition: 0.5s ease
+  animation: fadeIn 1s ease-in-out forwards
+
+  &:hover
+    background: var(--gold)
+    color: var(--secondary)
+
+@mixin settings_formfield
+  height: 0.5em
+
+  border: 1px solid var(--accent)
+  outline: 0
+  padding: 1em
+  margin: 1em 1em 0.5em 4em
+  border-radius: 5px
+
+  background: none
+  opacity: 0
+
+  font: inherit
+  font-size: 1em
+  color: var(--accent)
+  letter-spacing: 0.1em
+
+  transition: all 200ms ease-in
+  animation: formExpand 1s ease-in-out forwards
+
+//** keyframes **//
+@keyframes fadeInUp
+  0%
+    margin-top: 300px
+    opacity: 0
+
+  100%
+    opacity: 1
+
+@keyframes fadeOut
+  0%
+    opacity: 1
+
+  100%
+    opacity: 0
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+@keyframes fadeOutIn
+  0%
+    opacity: 1
+
+  50%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+// Floating Animations //
+@keyframes floating
+    0%
+      transform: translate(0,  0px)
+    100%
+      transform: translate(0, 15px)
+
+@keyframes floating-sm
+    0%
+      transform: translate(0,  0px)
+    100%
+      transform: translate(0, 5px)
+
+// Enter/Exit Animations //
+@keyframes enterFromTop
+    0%
+      margin-top: -200px
+      opacity: 0
+
+    100%
+      margin-top: 0px
+      opacity: 0.97
+
+@keyframes enterFromBottom
+    0%
+      margin-bottom: -200px
+      opacity: 0
+
+    100%
+      margin-bottom: 0px
+      opacity: 0.97
+
+@keyframes exitToTop
+    0%
+      opacity: 0.97
+
+    100%
+      transform: translate(0, -200px)
+      opacity: 0
+
+@keyframes exitToBottom
+    0%
+      opacity: 0.97
+
+    100%
+      transform: translate(0, 200px)
+      opacity: 0
+
+@keyframes moveToLeft
+    0%
+      transform: translate(0, 0)
+
+    100%
+      transform: translate(-24vw, 0)
+
+@keyframes fadeFromLeft
+    0%
+      margin-left: -300px
+
+    100%
+      margin-left: 0
+
+// Expand Animations //
+@keyframes settingsExpand
+    0%
+      width: 0
+      opacity: 0
+
+    75%
+      opacity: 0.5
+
+    100%
+      width: 750px
+      opacity: 1
+
+@keyframes formExpand
+    0%
+      width: 0
+      opacity: 0
+
+    75%
+      opacity: 0.5
+
+    100%
+      width: 76%
+      opacity: 1
+
+@keyframes nameExpand
+    0%
+      width: 0
+      opacity: 0
+
+    75%
+      opacity: 0.5
+
+    100%
+      width: 40%
+      opacity: 1
+
+@keyframes timerExpand
+    0%
+      width: 0
+      opacity: 0
+
+    75%
+      opacity: 0.5
+
+    100%
+      width: 13%
+      opacity: 1
+
+@keyframes expandFromLeft
+    0%
+      width: 0
+      opacity: 0
+
+    75%
+      opacity: 0.5
+
+    100%
+      width: auto
+      opacity: 1

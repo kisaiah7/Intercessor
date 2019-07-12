@@ -1,0 +1,146 @@
+@import "../variables.sass"
+
+@mixin group_btn($color)
+  label
+    display: inline
+    background-color: var(--secondary)
+    border: 1px solid $color
+    color: $color
+    font-size: 0.8em
+    border-radius: 1px
+    white-space: nowrap
+    margin: 0 7px
+    transition: 0.5s ease
+    padding: 2px 157.5px
+    cursor: pointer
+
+    &.selected
+      width: auto
+      margin: 0 3px
+
+    &:hover
+      border: 1px solid var(--primary)
+      background-color: var(--primary)
+      color: $color
+
+  input[type="checkbox"]
+    display: absolute
+    position: absolute
+    opacity: 0
+
+    &:checked + label
+      border: 1px solid $color
+      background-color: $color
+      color: var(--primary)
+      transition: 0.5s ease
+
+@mixin bottom_btn($color)
+  background-color: var(--secondary)
+  border: 1px solid $color
+  color: $color
+  cursor: pointer
+  font: inherit
+  font-size: 0.8em
+  border-radius: 1px
+  margin: 5px 4px
+  outline: none
+  padding: 4px 0
+  transition: 0.5s ease
+  white-space: nowrap
+  width: 97.5%
+
+  &:hover
+    border: 1px solid var(--primary)
+    background-color: var(--primary)
+    color: $color
+
+.groupDetailContainer
+  animation: fadeIn 1s ease-in forwards
+  border: 1px solid var(--accent)
+  margin: 20px 40px 20px 67px
+  padding: 10px 20px
+
+  .group_title
+    display: flex
+    flex-direction: row
+
+    .group_acronym
+      height: 0.5em
+      width: 70px
+
+      border: 1px solid var(--accent)
+      outline: 0
+      padding: 1em
+      margin: 10px 5px
+
+      background: none
+
+      font: inherit
+      font-size: 1em
+      color: var(--gold)
+      letter-spacing: 0.1em
+
+      &::placeholder
+        color: var(--accent)
+
+    .group_name
+      height: 0.5em
+      width: 300px
+
+      border: 1px solid var(--accent)
+      outline: 0
+      padding: 1em
+      margin: 10px 5px
+
+      background: none
+
+      font: inherit
+      font-size: 1em
+      color: var(--gold)
+      letter-spacing: 0.1em
+
+      &::placeholder
+        color: var(--accent)
+
+  .group_buttons-top
+    display: flex
+    flex-direction: row
+
+    .favorite
+      @include group_btn(var(--gold))
+
+  .group_description
+    color: var(--accent-one)
+    font-size: 0.95em
+    font-style: italic
+    margin: 15px 5px
+
+  .group_members
+    color: var(--accent)
+    margin: 10px 5px
+    max-height: 400px
+
+    overflow-y: auto
+    overflow-x: hidden
+
+    &::-webkit-scrollbar
+      width: 1em
+      background-color: var(--primary)
+      border: 1px solid var(--accent)
+
+    &::-webkit-scrollbar-thumb
+      background-color: var(--accent)
+
+    .member_info
+      color: var(--accent-one)
+      background-color: var(--secondary)
+      border: 1px solid var(--accent-one)
+      border-radius: 1px
+      font-size: 0.9em
+      height: auto
+      margin: 10px 0
+      padding: 5px
+      width: 95%
+
+  .group_leave
+    @include bottom_btn(var(--red))

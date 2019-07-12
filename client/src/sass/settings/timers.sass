@@ -1,0 +1,54 @@
+@import "../variables.sass"
+
+.settings
+  &__timer
+    display: flex
+    flex-direction: column
+    padding: 30px 10px 30px 65px
+
+    color: var(--green)
+
+    &__header
+      font-style: italic
+      font-size: 0.9em
+      color: var(--accent-one)
+
+    &__form
+      display: flex
+      flex-direction: row
+      margin: 10px 0
+
+      &__field
+        @include settings_formfield
+        height: 0.1em
+        margin-left: 0
+        width: 13%
+
+        animation: timerExpand 1s ease-in-out forwards
+
+      &-submitbtn
+        @include settings_btn
+        margin-left: 0
+
+    label
+      margin-left: 4em
+      opacity: 0
+
+      color: var(--accent)
+      animation: fadeIn 1s ease-in-out forwards
+
+    input[type=radio]
+      display: none
+
+    input[type=radio] + label
+      height: 15px
+      display: inline-block
+      margin: 5px
+      padding: 10px
+      background-color: var(--primary)
+      border-color: #ddd
+
+    input[type=radio]:checked + label
+      background-image: none
+      background-color: var(--accent)
+      color: var(--primary)

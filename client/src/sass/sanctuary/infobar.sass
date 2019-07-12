@@ -1,0 +1,56 @@
+@import "../variables.sass"
+
+.infoBar
+  position: absolute
+  left: 3%
+  bottom: 5%
+
+  width: 320px
+  max-height: 1000px
+
+  padding: 0.7em
+
+  color: var(--red)
+  font-size: 0.9em
+  text-align: left
+
+  z-index: 2
+  overflow-y: scroll
+
+  &::-webkit-scrollbar
+    width: 1em
+    background-color: var(--primary)
+
+    border-radius: 0 4px 4px 0
+
+  &::-webkit-scrollbar-thumb
+    background-color: var(--red)
+    border-radius: 0 4px 4px 0
+
+  &__timer
+    border-bottom: 1px solid var(--red)
+    color: var(--accent-one)
+
+    &-heading
+      font-style: italic
+      letter-spacing: 2px
+      color: var(--red)
+
+  &__topics
+    color: var(--accent-one)
+    white-space: pre-line
+
+    &-heading
+      font-style: italic
+      letter-spacing: 2px
+      color: var(--red)
+
+  &__inherit
+    &__name
+      font-style: italic
+      letter-spacing: 1px
+      color: var(--red)
+
+    &__body
+      white-space: pre-line
+      text-align: justify

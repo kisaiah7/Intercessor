@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=Cutive+Mono")
+@import "./variables.sass"
+
+\:root
+  --primary: #{$primary}
+  --secondary: #{$secondary}
+  --accent: #{$accent}
+  --primary-one: #{$primary-1}
+  --primary-two: #{$primary-2}
+  --secondary-one: #{$secondary-1}
+  --accent-one: #{$accent-1}
+  --shadow: #{$shadow}
+  --gold: #{$gold}
+  --gold-one: #{$gold-1}
+  --green: #{$green}
+  --green-one: #{$green-1}
+  --red: #{$red}
+  --red-one: #{$red-1}
+  --purple: #{$purple}
+  --purple-one: #{$purple-1}
+
+\[data-theme="dark"]
+  --primary: #{$primary-dark}
+  --secondary: #{$secondary-dark}
+  --accent: #{$accent-dark}
+  --primary-one: #{$primary-1-dark}
+  --primary-two: #{$primary-2-dark}
+  --secondary-one: #{$secondary-1-dark}
+  --accent-one: #{$accent-1-dark}
+  --shadow: #{$shadow-dark}
+  --gold: #{$gold-dark}
+  --gold-one: #{$gold-1-dark}
+  --green: #{$green-dark}
+  --green-one: #{$green-1-dark}
+  --red: #{$red-dark}
+  --red-one: #{$red-1-dark}
+  --purple: #{$purple-dark}
+  --purple: #{$purple-dark}
+  --purple-one: #{$purple-1-dark}
+
+body
+  margin: 0
+  padding: 0
+  font-family: Cutive-Mono, monospace
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  width: 100%
+  overflow: hidden
+
+.appContainer
+  background-color: var(--secondary)
+  width: 100%
+  height: 100%
+  position: absolute
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  align-items: center
+
+.container
+  background-color: var(--primary)
+  width: 98%
+  height: 96%
+  display: flex
+  border-radius: 20px
+  margin: 20px
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  align-items: center

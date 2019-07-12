@@ -1,0 +1,116 @@
+@import "./variables.sass"
+
+.menuContainer
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  grid-gap: 5em
+  align-items: center
+  justify-content: center
+
+  padding: 0 10%
+
+  animation: fadeIn 1s ease-in-out forwards
+
+  @media (max-width: 900px)
+    grid-gap: 2em
+
+  @media (max-width: 700px)
+    grid-template-columns: 1fr
+    grid-template-rows: 1fr 1fr 1fr
+
+.newsFeedContainer
+  color: #B47474
+  font: inherit
+  font-style: italic
+
+@mixin container($color)
+  display: grid
+  grid-template-rows: 1fr 10fr 1fr 1fr 1fr
+  height: 250px
+  width: 200px
+
+  border: 1px solid $color
+  background-color: var(--secondary)
+  padding: 0.5em 0.5em 1em 0.5em
+  border-radius: 5px
+
+  color: $color
+  font-size: 1em
+
+  box-shadow: 10px 10px var(--shadow)
+
+  @media (max-width: 700px)
+    height: 150px
+    width: 300px
+    padding: 0
+    grid-template-rows: 3fr 1fr
+
+  .text
+    grid-row: 2
+    height: 50px
+
+    border: 1px solid $color
+    padding: 4em 1em
+    text-align: center
+    border-radius: 5px
+
+    @media (max-width: 700px)
+      padding: 1.5em
+      height: 70%
+      grid-row: 1
+      border: none
+
+  .link
+    padding: 0.5em
+    grid-row: 4
+
+    border: 1px solid $color
+    background: none
+    color: $color
+    border-radius: 5px
+
+    text-decoration: none !important
+    letter-spacing: 1px
+    text-align: center
+    font-size: 0.9em
+
+    transition: all 500ms ease
+
+    @media (max-width: 700px)
+      padding: 0.5em 0
+      grid-row: 2
+      border: none
+      border-top: 1px solid $color
+
+    &:hover
+      background: $color
+      color: var(--secondary)
+
+.othersContainer
+  @include container(var(--purple))
+  grid-column: 1
+
+  animation: floating 2s ease-in-out infinite alternate
+
+  @media (max-width: 700px)
+    grid-row: 1
+
+.myselfContainer
+  @include container(var(--green))
+  grid-column: 2
+
+  animation: floating 2s ease-in-out 1s infinite alternate
+
+  @media (max-width: 700px)
+    grid-column: 1
+    grid-row: 2
+
+.forMeContainer
+  @include container(var(--red))
+  grid-column: 3
+
+  animation: floating 2s ease-in-out 0.5s infinite alternate
+
+  @media (max-width: 700px)
+    grid-column: 1
+    grid-row: 3

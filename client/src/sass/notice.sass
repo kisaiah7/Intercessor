@@ -1,0 +1,154 @@
+@import "./variables.sass"
+
+.noticeContainer
+  width: 98%
+  height: 96%
+
+  border-radius: 20px
+  margin: 20px
+
+  position: absolute
+  left: 0
+  top: 0
+
+  background-color: var(--primary)
+
+  display: flex
+  align-content: center
+  justify-content: center
+
+  z-index: 5
+
+@mixin smContainer($color)
+  height: 100%
+
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+
+  border: 1px solid $color
+  background-color: var(--secondary)
+  border-radius: 5px
+
+  color: $color
+  font-size: 1em
+
+  box-shadow: 10px 10px var(--shadow)
+
+@mixin bgContainer($color)
+  height: 250px
+  width: 50vw
+
+  display: flex
+  flex-direction: column
+  align-items: center
+  align-self: center
+
+  @media (max-width: 900px)
+    width: 35%
+    height: 500px
+
+  &-edit_timer
+    position: relative
+    right: 0
+
+  &-top
+    height: 80%
+    width: 100%
+
+    display: flex
+    flex-direction: row
+    align-items: center
+
+    @media (max-width: 900px)
+      flex-direction: column
+      width: auto
+
+    &-left
+      @include smContainer($color)
+      width: 30%
+      letter-spacing: 7px
+      padding: 0 13px
+
+      @media (max-width: 900px)
+        width: 100%
+        height: 10%
+
+        padding: 0
+
+    &-right
+      @include smContainer($color)
+      padding: 0 1em
+      border: none
+      border-top: 1px solid $color
+      border-right: 1px solid $color
+
+      font-size: 0.9em
+      letter-spacing: 1px
+
+      span
+        color: $color
+
+        cursor: pointer
+        transition: 0.5s ease
+
+        &:hover
+          color: var(--gold)
+
+      @media (max-width: 900px)
+        width: 100%
+        height: 100%
+
+        padding: 0
+        border: 1px solid $color
+        border-top: none
+        border-bottom: none
+
+        p
+          margin: 1em
+          text-align: right
+
+  &-bottom
+    @include smContainer($color)
+    width: 100%
+    height: 20%
+
+    color: $color
+    text-decoration: none !important
+    letter-spacing: 1px
+    text-align: center
+    font: inherit
+
+    outline: none
+
+    cursor: pointer
+    transition: 500ms ease
+
+    &:hover
+      background-color: $color
+      color: var(--primary)
+
+    @media (max-width: 900px)
+      height: 10%
+      width: 100%
+
+      &:hover
+        color: var(--gold)
+
+    p
+      cursor: pointer
+      transition: 500ms ease
+
+      &:hover
+        color: var(--gold)
+
+
+.others__notice
+  @include bgContainer(var(--purple))
+
+.myselfNoticeContainer
+  @include bgContainer(var(--green))
+
+.forMe__notice
+  @include bgContainer(var(--red))

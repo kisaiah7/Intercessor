@@ -1,0 +1,220 @@
+@import "./variables.sass"
+
+.loginContainer
+  display: flex
+  flex-direction: row
+
+  align-self: center
+
+  background-color: var(--primary)
+
+  animation: fadeIn 1s ease-in forwards, floating 2s ease-in-out infinite alternate
+
+  @media (max-width: 600px)
+    grid-template-columns: 1fr
+    grid-template-rows: auto auto
+
+    position: static
+
+  .titleBtn
+    width: 90%
+    height: 45px
+    margin: 0 5%
+    padding: 10px 0px
+
+    background: none
+    border: none
+    border-top: 1px solid var(--accent)
+    outline: none
+
+    color: var(--accent)
+    font-size: 0.9em
+    font: inherit
+
+    transition: 0.5s ease
+
+    &:hover
+      background-color: var(--accent)
+      color: var(--primary)
+
+// LEFT SIDE: TITLE/SUBTITLE
+.greetingContainer
+  border: 1px solid var(--accent)
+  background-color: var(--secondary)
+  padding: 1em 0.5em
+  border-radius: 5px
+
+  box-shadow: 10px 10px var(--shadow)
+
+  z-index: 1
+
+  &.newUser
+    text-align: center
+    letter-spacing: 0.2em
+
+  .greeting
+    color: var(--accent)
+    font-size: 1.5em
+    padding: 3em 0.5em
+
+    background-color: var(--secondary)
+
+  .theme-switch-wrapper
+    display: flex
+    align-items: center
+
+    position: absolute
+    left: 15px
+    top: 15px
+
+    z-index: 2
+
+  .theme-switch
+    display: inline-block
+    height: 20px
+    position: relative
+    width: 35px
+
+  .theme-switch input
+    display: none
+
+  .slider
+    background-color: var(--accent)
+    bottom: 0
+    cursor: pointer
+    left: 0
+    position: absolute
+    right: 0
+    top: 0
+    transition: .4s
+
+  .slider:before
+    background-color: var(--primary)
+    bottom: 4px
+    content: ""
+    height: 12px
+    left: 4px
+    position: absolute
+    transition: .4s
+    width: 12px
+
+  input:checked + .slider:before
+    transform: translateX(15px)
+
+  .slider.round
+    border-radius: 34px
+
+  .slider.round:before
+    border-radius: 50%
+
+// RIGHT SIDE: FILL IN FORM
+.inputContainer
+  width: 45vw
+  position: relative
+  padding: 2em
+
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+  border: 1px solid var(--accent)
+  background-color: var(--secondary-one)
+  border-radius: 5px
+
+  box-shadow: 10px 10px var(--shadow)
+
+  overflow: hidden
+
+  z-index: 1
+
+  &.invisible
+    display: none
+    z-index: 0
+
+  .form
+    &__field
+      width: 95%
+
+      border: 1px solid var(--accent)
+      outline: 0
+      padding: 1em
+      margin-bottom: 1.5em
+      border-radius: 5px
+
+      background: none
+
+      font: inherit
+      font-size: 1em
+      color: var(--accent)
+      letter-spacing: 0.1em
+
+      transition: all 200ms ease-in
+
+      @media (max-width: 700px)
+        font-size: 1em
+        width: 85%
+
+      &:hover
+        background: var(--primary-one)
+        color: #fff
+
+      &:focus
+        background: var(--primary-one)
+        color: #fff
+
+  .rgPasswords
+    display: inline-grid
+    grid-template-columns: 1fr 1fr
+    grid-column-gap: 3em
+
+    width: 97%
+
+  .loginBtns
+    display: flex
+    flex-direction: row
+    justify-content: center
+
+    .googleBtn
+      @include btn
+      font: inherit
+      position: relative
+
+      border-top: 1px solid var(--red)
+      color: var(--red)
+
+      &:hover
+        background-color: var(--red)
+        color: var(--primary)
+
+    .registerBtn
+      @include btn
+      border-top: 1px solid var(--accent)
+      color: var(--accent)
+      font: inherit
+
+      &:hover
+        background-color: var(--accent)
+        color: var(--primary)
+
+    .loginBtn
+      @include btn
+      grid-column: 4
+      border-top: 1px solid var(--accent)
+      color: var(--accent)
+      font: inherit
+
+      &:hover
+        background-color: var(--accent)
+        color: var(--primary)
+
+  .spacing
+    content: " "
+    height: 20px
+
+// ** Animation Classes ** //
+.moveToLeft
+  animation: moveToLeft 0.8s ease-in-out
+.fadeOutIn
+  animation: fadeOutIn 2s ease-in-out forwards
+.fadeIn
+  animation: fadeIn 0.8s ease-in-out forwards

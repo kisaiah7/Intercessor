@@ -1,0 +1,317 @@
+@import "./variables.sass"
+
+.prayerFeedContainer
+  width: 100vw
+
+  display: flex
+  flex-direction: row
+
+  .left
+    width: 10%
+    height: 100vh
+
+    margin: 12% 0 0 2%
+    padding: 3em 5em 3em 3em
+
+    border-right: 1px dashed var(--purple)
+
+    .favTitle
+      color: var(--purple)
+      letter-spacing: 1px
+      margin-top: 50px
+      font-size: 1em
+      font-style: italic
+
+    .favNotice
+      color: var(--purple-one)
+      font: inherit
+      font-style: italic
+
+      cursor: pointer
+      transition: 0.5s ease
+
+      &:hover
+        color: var(--gold)
+
+    .groupContainer
+      width: 100%
+
+      background-color: var(--secondary)
+      border: 1px solid var(--purple)
+      padding: 0 1em
+      margin: 2em 0
+      box-shadow: 7px 7px var(--shadow)
+      border-radius: 5px
+
+      color: var(--purple)
+
+      cursor: pointer
+      transition: 0.5s ease-in-out
+
+      &:hover
+        border: 1px dashed var(--accent)
+        color: var(--accent)
+
+  .right
+    width: 75%
+    height: 90vh
+
+    margin-top: 20vh
+    padding: 0 3em
+    margin-right: 3em
+
+    display: flex
+    flex-direction: column
+
+    overflow-y: scroll
+
+    font-style: italic
+    color: var(--purple)
+    letter-spacing: 1px
+
+    .groupName
+      color: var(--purple)
+      font-size: 2em
+
+    .filterNotice
+      align-self: center
+      margin-top: 40%
+
+      animation: floating 2s ease-in-out infinite alternate
+      cursor: pointer
+      transition: 0.5s ease-in
+
+      &:hover
+        color: var(--gold)
+
+    .prayerLink
+      text-decoration: none
+      color: var(--purple)
+      font-size: 1em
+      text-align: left
+      font: inherit
+
+      margin: -5px 0
+      width: 80%
+
+      background: none
+      border: none
+      outline: none
+
+      transition: 0.5s ease
+      cursor: pointer
+
+      span
+        color: var(--purple-one)
+        letter-spacing: -0.5px
+        font-size: 0.9em
+
+      &:hover
+        color: var(--accent)
+
+    &::-webkit-scrollbar
+      width: 1em
+      background-color: var(--primary)
+      border: 1px solid var(--purple)
+      border-radius: 5px
+
+    &::-webkit-scrollbar-thumb
+      background-color: var(--purple)
+
+  .load_more
+    position: absolute
+    bottom: 5%
+    right: 5%
+
+    padding: 0.5em
+    background-color: var(--secondary)
+
+    color: var(--accent)
+    font: inherit
+    border: 1px solid var(--accent)
+    font-style: italic
+    border-radius: 5px
+
+    outline: none
+    cursor: pointer
+    transition: 0.5s ease
+
+    &.end
+      border: 1px solid var(--red)
+      color: var(--red)
+      cursor: crosshair
+
+      &:hover
+        color: var(--red)
+        border: 1px solid var(--red)
+
+    &:hover
+      color: var(--gold)
+      border: 1px solid var(--gold)
+
+  .filter
+    position: absolute
+    top: 3%
+    right: 5%
+
+    padding: 0.5em
+    background-color: var(--secondary)
+
+    color: var(--purple)
+    border: 1px solid var(--purple)
+    font-style: italic
+    border-radius: 5px
+
+    cursor: pointer
+    transition: 0.5s ease
+
+    &:hover
+      color: var(--gold)
+      border: 1px solid var(--gold)
+
+.filter_groups
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+
+  position: fixed
+  z-index: 1
+  padding: 2em
+
+  background-color: var(--secondary)
+  border: 1px solid var(--purple)
+  border-radius: 5px
+
+  font-size: 1em
+  color: var(--purple)
+  letter-spacing: 1px
+
+  animation: fadeIn 1s ease-in-out forwards
+
+  button
+    border: none
+    border-radius: 5px
+    outline: none
+    background: none
+    color: var(--purple)
+    position: absolute
+    top: 10px
+    left: 10px
+    font-size: 4em
+    font: inherit
+    transition: 0.5s ease-in-out
+    cursor: pointer
+
+    &:hover
+      color: var(--gold)
+
+  .group_view
+    border-top: 1px dashed var(--purple)
+
+    .group
+      display: block
+      position: static
+      margin: 10px 0
+      width: 100%
+      text-align: left
+      border: 1px dashed var(--purple)
+      padding: 10px
+      cursor: pointer
+      transition: 0.8s ease
+
+      &:hover
+        color: var(--gold)
+        border: 1px dashed var(--gold)
+
+/*
+ * Detail Prayer
+ *
+ */
+.detailPrayer
+  width: 70vw
+
+  position: absolute
+  align-self: center
+  left: 0
+  right: 0
+  margin-left: auto
+  margin-right: auto
+
+  background-color: var(--secondary)
+  box-shadow: 10px 10px var(--shadow)
+  border: 1px solid var(--purple)
+  border-radius: 5px
+
+  color: var(--purple)
+  font-style: italic
+
+  animation: fadeIn 2s ease forwards
+
+  &.exitTransition
+    animation: fadeOut 1s ease forwards
+
+  &__top
+    display: flex
+    flex-direction: row
+
+    &-exit
+      width: 5%
+
+      border: none
+      border-bottom: 1px solid var(--purple)
+      border-right: 1px solid var(--purple)
+      border-radius: 5px 0 0 0
+
+      color: var(--purple)
+      font: inherit
+
+      background: none
+      outline: none
+
+      cursor: pointer
+      transition: 0.5s ease
+
+      &:hover
+        background-color: var(--shadow)
+        color: var(--accent)
+
+    &-date
+      width: 15%
+
+      border-bottom: 1px solid var(--purple)
+      padding: 0.3em 2em
+
+    &-blurb
+      width: 100%
+
+      border-left: 1px solid var(--purple)
+      border-bottom: 1px solid var(--purple)
+      padding: 0.3em 2em
+
+  &__bottom
+    display: flex
+    flex-direction: column
+
+    &-body
+      height: 50vh
+
+      padding: 2em
+
+      white-space: pre-line
+
+    &-btn
+      padding-right: 2em
+
+      background-color: var(--purple)
+      border-radius: 5px
+      border-top: 1px solid var(--purple)
+
+      text-align: right
+      color: var(--primary)
+
+      cursor: pointer
+      transition: 0.5s ease-in-out
+
+      &:hover
+        color: var(--purple)
+        background-color: var(--shadow)

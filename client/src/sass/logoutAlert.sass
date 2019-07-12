@@ -1,0 +1,58 @@
+@import "./variables.sass"
+
+.alertContainer
+  position: absolute
+  left: 0
+  top: 0
+
+  width: 100vw
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+
+  background-color: #2b333e99
+
+  z-index: 4
+
+  &.fadeOut
+    animation: fadeOut 1s ease-in-out forwards
+
+  .logoutAlert
+    @include alert
+    padding: 1em
+
+    width: auto
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    border: 1px solid var(--accent)
+    border-radius: 5px
+
+    animation: fadeIn 0.75s ease-in-out, floating 3s ease-in-out infinite alternate
+
+    .links
+      display: flex
+      flex-direction: row
+      justify-content: center
+      align-items: center
+
+      a
+        @include answers
+        border-top: 1px solid var(--accent)
+        color: var(--accent)
+
+        &:hover
+          color: var(--primary)
+          background-color: var(--accent)
+
+      button
+        @include answers
+        color: var(--red)
+        border-top: 1px solid var(--red)
+
+        &:hover
+          color: var(--primary)
+          background-color: var(--red)

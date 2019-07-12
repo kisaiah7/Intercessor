@@ -1,0 +1,43 @@
+@import "../variables.sass"
+
+.settings
+  &__userInfo
+    width: 80%
+
+    &__header
+      font-style: italic
+      font-size: 0.9em
+      color: var(--accent-one)
+
+      margin: 20px 28px 10px 64px
+
+      span
+        color: var(--gold)
+
+    label
+      font-style: italic
+      font-size: 0.9em
+      color: var(--accent-one)
+
+      margin-left: 64px
+
+    &__form
+      &__field
+        @include settings_formfield
+
+        &.email
+          background: var(--primary-one)
+          color: var(--primary-two)
+
+          &:hover
+            color: var(--primary-two)
+
+        @media (max-width: 700px)
+          font-size: 1em
+
+        &:hover
+          background: var(--primary-one)
+          color: #fff
+
+    &__submitbtn
+      @include settings_btn

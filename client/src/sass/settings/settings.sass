@@ -1,0 +1,73 @@
+@import "../variables.sass"
+
+.settings
+  &__container
+    display: flex
+    flex-direction: row
+
+    width: 750px
+
+    border: 1px solid var(--accent)
+    background-color: var(--secondary)
+    padding: 1em 0.5em
+    border-radius: 5px
+
+    text-align: left
+
+    animation: settingsExpand 0.75s ease-in-out, floating 3s ease-in-out infinite alternate
+    z-index: 5
+
+  &-exitbtn
+    margin-bottom: 40px
+
+    background: none
+    border: none
+    outline: none
+
+    color: var(--accent)
+    font-size: 1.5em
+
+    cursor: pointer
+    transition: 0.5s ease
+
+  &__sidelinks
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+
+    color: var(--accent)
+
+    .selected
+      color: var(--gold)
+
+    &:hover
+      color: var(--gold)
+
+    p
+      margin-left: 7px
+      padding-bottom: 15px
+
+      color: var(--gold)
+      font-size: 1.2em
+      letter-spacing: 2px
+
+      border-bottom: 1px solid var(--gold)
+
+    button
+      border: none
+      outline: none
+      background: none
+      margin: 5px 0
+
+      font-size: 1em
+      color: var(--accent)
+      font: inherit
+
+      cursor: pointer
+      transition: 0.5 ease
+
+      &:hover
+        color: var(--gold)
+
+  .submit
+    @include settings_btn
