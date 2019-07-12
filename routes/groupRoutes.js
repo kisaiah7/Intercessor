@@ -91,17 +91,6 @@ module.exports = app => {
   }
 
   /*
-      Set group as PRIVATE
-  */
-  app.post("/api/privacy_group", async (req, res) => {
-    let { isPrivate, group_acronym } = req.body;
-
-    const group = await Group.findOne({ acronym: group_acronym });
-    group.isPrivate = isPrivate;
-    group.save();
-  });
-
-  /*
       Search groups and return array of group
   */
   app.post("/api/search_groups", async (req, res) => {
