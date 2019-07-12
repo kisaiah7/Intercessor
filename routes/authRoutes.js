@@ -79,11 +79,6 @@ module.exports = app => {
     if (!req.user) return res.redirect("/");
     next();
   }
-
-  app.get("/menu", requireLogin, function(req, res) {
-    res.send("Menu", { user: req.user });
-  });
-
   /*
       REGISTER LOCAL STRATEGY
   */
