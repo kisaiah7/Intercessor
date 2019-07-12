@@ -41,14 +41,14 @@ class Notice extends Component {
   }
 
   tick() {
-    if (this.state.timer > 0.25) {
+    if (this.state.timer > 0.01) {
       this.setState(prevState => {
         return {
-          timer: prevState.timer - 0.25,
-          btnText: prevState.timer - 0.25 + " minutes"
+          timer: prevState.timer - 0.01,
+          btnText: prevState.timer - 0.01 + " minutes"
         };
       });
-    } else if (this.state.timer <= 0.25) {
+    } else if (this.state.timer <= 0.01) {
       this.setState({
         btnText: "enter >",
         onClick: this.props.exit
