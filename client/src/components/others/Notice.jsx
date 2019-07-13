@@ -51,7 +51,7 @@ class Notice extends Component {
   }
 
   tick() {
-    if (this.state.timer !== 1 && this.state.timer !== 0) {
+    if (this.state.timer !== 1 && this.state.timer > 0) {
       this.setState(prevState => {
         return {
           timer: prevState.timer - 0.25,

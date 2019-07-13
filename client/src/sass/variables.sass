@@ -122,6 +122,15 @@ $purple-1: darken($purple, 10%)
   animation: formExpand 1s ease-in-out forwards
 
 //** keyframes **//
+@keyframes swellColors
+    0%
+      color: $accent
+      letter-spacing: 0
+
+    100%
+      color: $red
+      letter-spacing: 0.1px
+
 @keyframes fadeInUp
   0%
     margin-top: 300px
@@ -153,6 +162,8 @@ $purple-1: darken($purple, 10%)
 
   100%
     opacity: 1
+
+
 
 // Floating Animations //
 @keyframes floating
