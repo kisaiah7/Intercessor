@@ -53,6 +53,13 @@ class Notice extends Component {
         btnText: "enter >",
         onClick: this.props.exit
       });
+    } else if (this.state.timer <= 1) {
+      this.setState(prevState => {
+        return {
+          timer: prevState.timer - 0.25,
+          btnText: prevState.timer - 0.25 + " minute"
+        };
+      });
     }
   }
 
