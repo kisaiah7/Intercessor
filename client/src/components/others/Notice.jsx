@@ -34,10 +34,20 @@ class Notice extends Component {
   }
 
   setTimer() {
-    this.setState({
-      timer: this.props.auth.timer,
-      btnText: this.props.auth.timer + " minutes"
-    });
+    this.setState(
+      {
+        timer: this.props.auth.timer,
+        btnText: this.props.auth.timer + " minutes"
+      },
+      () => {
+        if (this.state.timer === 0) {
+          this.setState({
+            btnText: "enter >",
+            onClick: this.props.exit
+          });
+        }
+      }
+    );
   }
 
   tick() {
