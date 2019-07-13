@@ -82,14 +82,14 @@ class Sidebar extends React.Component {
     return (
       <div>
         <div className={this.state.color}>
-          <div class="theme-switch-wrapper">
-            <label class="theme-switch" for="checkbox">
+          <div className="theme-switch-wrapper">
+            <label className="theme-switch" htmlFor="checkbox">
               <input
                 type="checkbox"
                 onChange={this.toggleTheme}
                 id="checkbox"
               />
-              <div class="slider round" />
+              <div className="slider round" />
             </label>
           </div>
           <p className="time">{this.clockRender()}</p>

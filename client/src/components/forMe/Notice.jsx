@@ -41,24 +41,26 @@ class Notice extends Component {
   }
 
   tick() {
-    if (this.state.timer > 0.25) {
+    if (this.state.timer !== 1 && this.state.timer !== 0) {
       this.setState(prevState => {
         return {
           timer: prevState.timer - 0.25,
           btnText: prevState.timer - 0.25 + " minutes"
         };
       });
-    } else if (this.state.timer <= 0.25) {
-      this.setState({
-        btnText: "enter >",
-        onClick: this.props.exit
-      });
-    } else if (this.state.timer <= 1) {
+    }
+    if (this.state.timer === 1) {
       this.setState(prevState => {
         return {
           timer: prevState.timer - 0.25,
           btnText: prevState.timer - 0.25 + " minute"
         };
+      });
+    }
+    if (this.state.timer === 0) {
+      this.setState({
+        btnText: "enter >",
+        onClick: this.props.exit
       });
     }
   }
