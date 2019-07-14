@@ -35,7 +35,8 @@ class Login extends Component {
     }, 4000);
   };
 
-  onLogin = async () => {
+  onLogin = async e => {
+    e.preventDefault();
     // Grab state
     let { email, password, user } = this.state;
 
@@ -81,7 +82,7 @@ class Login extends Component {
     }
     return (
       <div>
-        <form className="form">
+        <form className="form" onSubmit={this.onLogin}>
           <input
             type="email"
             id="email"
@@ -101,16 +102,16 @@ class Login extends Component {
             value={password}
             onChange={this.onChangePassword}
           />
-        </form>
-        <div className="loginBtns">
-          <a className="googleBtn" href="/auth/google">
-            login with Google
-          </a>
+          <div className="loginBtns">
+            <a className="googleBtn" href="/auth/google">
+              login with Google
+            </a>
 
-          <button className="loginBtn" type="submit" onClick={this.onLogin}>
-            {btnText}
-          </button>
-        </div>
+            <button className="loginBtn" type="submit">
+              {btnText}
+            </button>
+          </div>
+        </form>
       </div>
     );
   }

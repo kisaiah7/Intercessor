@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import Login from "./login/";
 import Register from "./login/Register";
+
+import { connect } from "react-redux";
+import { fetchUser } from "../actions";
+
 import "../sass/login.sass";
 
 class LoginPage extends Component {
@@ -23,6 +27,12 @@ class LoginPage extends Component {
     this.toggleInputForm = this.toggleInputForm.bind(this);
     this.login = this.login.bind(this);
     this.register = this.register.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchUser();
+
+    console.log(this.props);
   }
 
   toggleTheme = e => {
@@ -95,14 +105,14 @@ class LoginPage extends Component {
       <div className="loginContainer">
         <div className={this.state.greetingContainerStyle}>
           <div className={this.state.greetingStyle}>
-            <div class="theme-switch-wrapper">
-              <label class="theme-switch" for="checkbox">
+            <div className="theme-switch-wrapper">
+              <label className="theme-switch" htmlFor="checkbox">
                 <input
                   type="checkbox"
                   onChange={this.toggleTheme}
                   id="checkbox"
                 />
-                <div class="slider round" />
+                <div className="slider round" />
               </label>
             </div>
             {this.state.greetingText}
@@ -128,4 +138,11 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage;
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(
+  mapStateToProps,
+  { fetchUser }
+)(LoginPage);

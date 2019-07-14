@@ -336,6 +336,7 @@ class Groups extends React.Component {
       });
       this.resetSubmitBtn();
     }
+    this.props.fetchUser();
   };
   //**************************************************3//
 

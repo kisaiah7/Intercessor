@@ -74,9 +74,9 @@ module.exports = app => {
       UPDATING TIMER
   */
   app.post("/api/user_timer", async (req, res, next) => {
-    let { timer, email } = req.body;
+    let { timer } = req.body;
 
-    const user = await User.findOne({ email: email });
+    const user = req.user;
 
     user.timer = timer;
     user.save((err, user) => {
@@ -85,6 +85,24 @@ module.exports = app => {
       }
       console.log("updating...");
       res.send({ success: true, message: "Updating..." });
+    });
+  });
+
+  /*
+      UPDATING THEME PREFERENCE
+  */
+  app.post("/api/user_theme", async (req, res, next) => {
+    let { theme } = req.body;
+
+    const user = req.user;
+
+    user.theme = theme;
+    user.save((err, user) => {
+      if (err) {
+        return console.log(err);
+      }
+      console.log("updating...");
+      res.send({ success: theme });
     });
   });
 

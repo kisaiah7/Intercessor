@@ -20,7 +20,7 @@ class Notice extends Component {
   }
 
   componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 25000);
+    this.timerID = setInterval(() => this.tick(), 1000);
     this.props.fetchUser();
     this.setTimer();
   }
@@ -34,40 +34,21 @@ class Notice extends Component {
   }
 
   setTimer() {
-    this.setState(
-      {
-        timer: this.props.auth.timer,
-        btnText: this.props.auth.timer + " minutes"
-      },
-      () => {
-        if (this.state.timer === 0) {
-          this.setState({
-            btnText: "enter >",
-            onClick: this.props.exit
-          });
-        }
-      }
-    );
+    this.setState({
+      timer: this.props.auth.timer,
+      btnText: this.props.auth.timer + " minutes"
+    });
   }
 
   tick() {
-    if (this.state.timer !== 1 && this.state.timer > 0) {
+    if (this.state.timer > 0.25) {
       this.setState(prevState => {
         return {
           timer: prevState.timer - 0.25,
           btnText: prevState.timer - 0.25 + " minutes"
         };
       });
-    }
-    if (this.state.timer === 1) {
-      this.setState(prevState => {
-        return {
-          timer: prevState.timer - 0.25,
-          btnText: prevState.timer - 0.25 + " minute"
-        };
-      });
-    }
-    if (this.state.timer === 0) {
+    } else if (this.state.timer <= 0.25) {
       this.setState({
         btnText: "enter >",
         onClick: this.props.exit

@@ -19,6 +19,7 @@ class GroupDetail extends Component {
   componentDidMount() {
     this.props.fetchUser();
     this.getMemberInfo();
+    this.renderFavorite();
     this.renderBtn();
   }
 
@@ -40,19 +41,15 @@ class GroupDetail extends Component {
   renderFavorite = () => {
     const user_fav_groups = this.props.auth.favGroups;
     const current_group = this.props.group.acronym;
-    return (
-      <form className="favorite">
-        <input
-          type="checkbox"
-          id="favorite"
-          value={this.state.isFavorite}
-          className="favorite"
-          onChange={this.onFavoriteChange}
-          checked={user_fav_groups.includes(current_group) ? "checked" : ""}
-        />
-        <label htmlFor="favorite">favorite group</label>
-      </form>
-    );
+    if (user_fav_groups.includes(current_group)) {
+      this.setState({
+        isFavorite: true
+      });
+    } else {
+      this.setState({
+        isFavorite: false
+      });
+    }
   };
 
   renderBtn = () => {
@@ -72,19 +69,30 @@ class GroupDetail extends Component {
   //** end button rendering **//
 
   onFavoriteChange = e => {
-    this.setState(prevState => ({
-      isFavorite: !prevState.isFavorite
-    }));
-
     const isFavorite = e.target.checked;
     const acronym = this.props.group.acronym;
     const user_email = this.props.auth.email;
 
-    axios.post("/api/favorite_group", {
-      isFavorite,
-      acronym,
-      user_email
-    });
+    this.setState(
+      prevState => ({
+        isFavorite: !prevState.isFavorite
+      }),
+      async () => {
+        if (this.state.isFavorite) {
+          await axios.post("/api/favorite_group", {
+            isFavorite,
+            acronym
+          });
+          this.props.fetchUser();
+        } else {
+          await axios.post("/api/favorite_group", {
+            isFavorite,
+            acronym
+          });
+          this.props.fetchUser();
+        }
+      }
+    );
   };
 
   getUpdatedMemberList = async () => {
@@ -158,6 +166,7 @@ class GroupDetail extends Component {
         this.getUpdatedMemberList();
       }
     }
+    this.props.fetchUser();
   };
 
   render() {
@@ -177,7 +186,18 @@ class GroupDetail extends Component {
             disabled
           />
         </div>
-        <div className="group_buttons-top">{this.renderFavorite()}</div>
+        <div className="group_buttons-top">
+          <form className="favorite">
+            <input
+              type="checkbox"
+              id="favorite"
+              className="favorite"
+              onChange={this.onFavoriteChange}
+              checked={this.state.isFavorite}
+            />
+            <label htmlFor="favorite">favorite group</label>
+          </form>
+        </div>
         <p className="group_description">{this.props.group.description}</p>
         <div className="group_members">
           <p className="group_members_title">member list:</p>

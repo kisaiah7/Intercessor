@@ -41,7 +41,8 @@ class Register extends Component {
     }, 4000);
   };
 
-  onRegister = async () => {
+  onRegister = async e => {
+    e.preventDefault();
     // Grab state
     const { email, password, vpassword } = this.state;
 
@@ -73,7 +74,7 @@ class Register extends Component {
 
     return (
       <div>
-        <form className="form">
+        <form className="form" onSubmit={this.onRegister}>
           <input
             type="email"
             name="email"
@@ -99,21 +100,16 @@ class Register extends Component {
               onChange={this.onChangeVPassword}
             />
           </div>
+          <div className="loginBtns">
+            <a className="googleBtn" href="/auth/google">
+              register with Google
+            </a>
+
+            <button className="registerBtn" type="submit">
+              {btnText}
+            </button>
+          </div>
         </form>
-
-        <div className="loginBtns">
-          <a className="googleBtn" href="/auth/google">
-            register with Google
-          </a>
-
-          <button
-            className="registerBtn"
-            type="submit"
-            onClick={this.onRegister}
-          >
-            {btnText}
-          </button>
-        </div>
       </div>
     );
   }

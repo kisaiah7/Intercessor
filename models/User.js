@@ -19,7 +19,8 @@ const userSchema = new Schema({
   ownPrayers: [String],
   timer: { type: Number, default: 3 },
   isVerified: { type: Boolean, default: false },
-  newUser: { type: Boolean, default: true }
+  newUser: { type: Boolean, default: true },
+  theme: { type: String, default: "light" }
 });
 
 userSchema.methods.generateHash = password => {

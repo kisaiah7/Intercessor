@@ -91,6 +91,17 @@ module.exports = app => {
   }
 
   /*
+      Set group as PRIVATE
+  */
+  app.post("/api/privacy_group", async (req, res) => {
+    let { isPrivate, group_acronym } = req.body;
+
+    const group = await Group.findOne({ acronym: group_acronym });
+    group.isPrivate = isPrivate;
+    group.save();
+  });
+
+  /*
       Search groups and return array of group
   */
   app.post("/api/search_groups", async (req, res) => {
@@ -144,9 +155,7 @@ module.exports = app => {
   app.post("/api/favorite_group", async (req, res) => {
     let { acronym, isFavorite, user_email } = req.body;
 
-    const user = await User.findOne({
-      email: user_email
-    }).lean();
+    const user = req.user;
 
     if (isFavorite) {
       user.favGroups.push(acronym);
@@ -155,7 +164,7 @@ module.exports = app => {
       user.favGroups.splice(index, 1);
     }
     user.save();
-    res.send({ success: true });
+    res.send({ success: isFavorite });
   });
 
   app.post("/api/join_group", async (req, res) => {

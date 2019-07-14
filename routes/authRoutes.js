@@ -42,6 +42,7 @@ module.exports = app => {
   );
 
   async function handleLogin(req, res, next) {
+    console.log("login pressed");
     let email = req.body.email;
     let password = req.body.password;
 
@@ -79,6 +80,11 @@ module.exports = app => {
     if (!req.user) return res.redirect("/");
     next();
   }
+
+  app.get("/menu", requireLogin, function(req, res) {
+    res.render("Menu", { user: req.user });
+  });
+
   /*
       REGISTER LOCAL STRATEGY
   */

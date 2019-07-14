@@ -21,7 +21,6 @@ class Main extends Component {
     this.props.fetchGroups(this.props.auth.groups);
     this.props.fetchFavGroups(this.props.auth.favGroups);
     this.props.fetchVerse();
-    console.log(this.props);
   }
 
   render() {

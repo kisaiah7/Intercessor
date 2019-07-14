@@ -295,7 +295,7 @@ class PrayerForm extends Component {
         });
       }, 1000);
 
-      const prayer = await axios.post("/api/new_prayer", {
+      await axios.post("/api/new_prayer", {
         title: title,
         body: body,
         recipients: selected_results

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import axios from "axios";
-import { fetchVerse } from "../../actions";
 
 import Sidebar from "../menu/Sidebar";
 import Prompt from "./Prompt";
@@ -61,10 +60,9 @@ class Sanctuary extends Component {
   };
 
   getBibleVerse = async () => {
-    const random_verse = await axios.get("/api/get_verse");
-
-    console.log("sdf", random_verse);
+    await axios.get("/api/get_verse");
   };
+
   render() {
     return (
       <div className="sanctuaryContainer">

@@ -1,4 +1,8 @@
 import React from "react";
+import axios from "axios";
+import { connect } from "react-redux";
+import { fetchUser } from "../../actions";
+
 import LogoutAlert from "./LogoutAlert";
 import Settings from "../settings/Settings";
 
@@ -12,19 +16,49 @@ class Sidebar extends React.Component {
       date: new Date(),
       logout_popup: false,
       settings_popup: false,
-      color: "sideBar " + props.page
+      color: "sideBar " + props.page,
+      checked: false
     };
 
     this.popup = this.popup.bind(this);
     this.exitPopup = this.exitPopup.bind(this);
   }
 
-  toggleTheme = e => {
-    if (e.target.checked) {
+  renderUserTheme = () => {
+    if (this.props.auth.theme === "dark") {
       document.documentElement.setAttribute("data-theme", "dark");
+      this.setState({
+        checked: true
+      });
     } else {
       document.documentElement.setAttribute("data-theme", "light");
+      this.setState({
+        checked: false
+      });
     }
+  };
+
+  toggleTheme = e => {
+    this.setState(
+      prevState => {
+        return { checked: !prevState.checked };
+      },
+      async () => {
+        if (this.state.checked) {
+          document.documentElement.setAttribute("data-theme", "dark");
+          await axios.post("/api/user_theme", {
+            theme: "dark"
+          });
+          this.props.fetchUser();
+        } else {
+          document.documentElement.setAttribute("data-theme", "light");
+          await axios.post("/api/user_theme", {
+            theme: "light"
+          });
+          this.props.fetchUser();
+        }
+      }
+    );
   };
 
   clockRender() {
@@ -46,7 +80,9 @@ class Sidebar extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchUser();
     this.timerID = setInterval(() => this.tick(), 60000);
+    this.renderUserTheme();
   }
 
   componentWillUnmount() {
@@ -88,6 +124,7 @@ class Sidebar extends React.Component {
                 type="checkbox"
                 onChange={this.toggleTheme}
                 id="checkbox"
+                checked={!!this.state.checked}
               />
               <div className="slider round" />
             </label>
@@ -114,4 +151,11 @@ class Sidebar extends React.Component {
   }
 }
 
-export default Sidebar;
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(
+  mapStateToProps,
+  { fetchUser }
+)(Sidebar);

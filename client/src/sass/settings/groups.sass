@@ -28,9 +28,6 @@
         &.description
           height: 3em
 
-          &:focus
-            color: var(--accent)
-
           &::-webkit-scrollbar
             width: 1em
             background-color: var(--primary)
@@ -47,7 +44,7 @@
           font-size: 1em
 
         &:hover
-          background: var(--primary-one)
+          background: var(--selected)
           color: #fff
 
     /* GENERAL Group Screen
@@ -76,7 +73,7 @@
 
       font: inherit
       font-size: 0.9em
-      color: var(--accent)
+      color: var(--secondary)
       text-align: right
       letter-spacing: 2px
 
@@ -86,14 +83,14 @@
       outline: 0
       margin: 0 0 0px 65px
       padding: 1em
-      background-color: var(--primary)
+      background-color: var(--accent)
 
       transition: 0.5s ease
       cursor: pointer
 
       &:hover
-        background-color: var(--accent)
-        color: var(--secondary)
+        background-color: var(--gold)
+        border: 1px solid var(--primary)
 
     &-groupView
       width: 450px
@@ -191,48 +188,6 @@
           background-color: var(--accent)
           color: var(--primary)
           transition: 1s ease
-    &__form
-      &-privacy
-        display: grid
-        grid-template-columns: 1fr 3fr
-        height: 30px
-
-        &-btn
-          margin-left: 3.7em
-          margin-top: 8px
-
-          label
-            display: inline
-            background-color: var(--secondary)
-            border: 1px solid var(--red)
-            color: var(--red)
-            font-size: 0.8em
-            border-radius: 1px
-            white-space: nowrap
-            margin: 0 4px
-            transition: 0.5s ease
-            padding: 8px
-            cursor: pointer
-
-            &.selected
-              width: auto
-              margin: 0 3px
-
-            &:hover
-              border: 1px solid var(--primary)
-              background-color: var(--primary)
-              color: var(--red-one)
-
-          input[type="checkbox"]
-            display: absolute
-            position: absolute
-            opacity: 0
-
-            &:checked + label
-              border: 1px solid var(--red)
-              background-color: var(--red)
-              color: var(--primary)
-              transition: 0.5s ease
 
     &-createbtn
       @include settings_btn
