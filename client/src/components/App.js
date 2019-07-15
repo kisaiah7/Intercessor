@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import * as actions from "../actions";
+import { fetchUser } from "../actions";
 
 import LoginPage from "./Login.jsx";
 import Main from "./Main";
@@ -14,31 +15,22 @@ import Santuary from "./sanctuary/Sanctuary";
 import "../sass/index.sass";
 
 class App extends Component {
-  constructor() {
-    super();
+  componentDidMount() {
+    this.props.fetchUser();
 
-    this.state = {
-      email: ""
-    };
+    if (!this.props.auth) {
+      return <Redirect push to={{ pathname: "/" }} replace />;
+    }
+
+    console.log("from APP", this.props.auth);
   }
-
-  setEmail = email => {
-    this.setState({
-      email
-    });
-  };
-
   render() {
     return (
       <div className="appContainer">
         <div className="container">
           <BrowserRouter>
             <div>
-              <Route
-                exact
-                path="/"
-                render={() => <LoginPage setEmail={this.setEmail} />}
-              />
+              <Route exact path="/" render={() => <LoginPage />} />
               <Route path="/menu" component={Main} />
               <Route path="/newUser" component={NewUser} />
               <Route path="/others" component={PrayerFeed} />
@@ -53,7 +45,11 @@ class App extends Component {
   }
 }
 
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
 export default connect(
-  null,
-  actions
+  mapStateToProps,
+  { fetchUser }
 )(App);

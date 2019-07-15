@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import "../../sass/feedback.sass";
-import { Link } from "react-router-dom";
 
 class Feedback extends Component {
   constructor(props) {

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+
 import Login from "./login/";
 import Register from "./login/Register";
 
@@ -32,7 +34,7 @@ class LoginPage extends Component {
   componentDidMount() {
     this.props.fetchUser();
 
-    console.log(this.props);
+    console.log("login", this.props);
   }
 
   toggleTheme = e => {
@@ -101,6 +103,24 @@ class LoginPage extends Component {
   }
 
   render() {
+    if (this.props.auth) {
+      if (this.props.auth.newUser) {
+        return (
+          <Redirect
+            push
+            to={{ pathname: "/newUser", state: { user: this.props.auth } }}
+            replace
+          />
+        );
+      }
+      return (
+        <Redirect
+          push
+          to={{ pathname: "/menu", state: { user: this.props.auth } }}
+          replace
+        />
+      );
+    }
     return (
       <div className="loginContainer">
         <div className={this.state.greetingContainerStyle}>

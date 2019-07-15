@@ -18,7 +18,7 @@
   &.fadeOut
     animation: fadeOut 1s ease-in-out forwards
 
-  .logoutAlert
+  .logout
     @include alert
     padding: 1em
 
@@ -33,13 +33,13 @@
 
     animation: fadeIn 0.75s ease-in-out, floating 3s ease-in-out infinite alternate
 
-    .links
+    &__links
       display: flex
       flex-direction: row
       justify-content: center
       align-items: center
 
-      a
+      &-yes
         @include answers
         border-top: 1px solid var(--accent)
         color: var(--accent)
@@ -48,7 +48,7 @@
           color: var(--primary)
           background-color: var(--accent)
 
-      button
+      &-no
         @include answers
         color: var(--red)
         border-top: 1px solid var(--red)

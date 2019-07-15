@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 
+import { connect } from "react-redux";
+import { fetchUser } from "../../actions";
+
 class Login extends Component {
   constructor() {
     super();
@@ -46,11 +49,14 @@ class Login extends Component {
     });
 
     if (user.data.success) {
-      this.setState({
-        btnText: user.data.message,
-        success: true,
-        user: user.data.user
-      });
+      this.props.fetchUser();
+      setTimeout(() => {
+        this.setState({
+          btnText: user.data.message,
+          success: true,
+          user: user.data.user
+        });
+      }, 100);
     } else {
       this.setState({
         btnText: user.data.message
@@ -80,6 +86,7 @@ class Login extends Component {
         />
       );
     }
+
     return (
       <div>
         <form className="form" onSubmit={this.onLogin}>
@@ -117,4 +124,11 @@ class Login extends Component {
   }
 }
 
-export default Login;
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(
+  mapStateToProps,
+  { fetchUser }
+)(Login);
