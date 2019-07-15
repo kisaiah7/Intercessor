@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchUser, fetchGroups, fetchFavGroups, fetchVerse } from "../actions";
 
@@ -23,6 +24,9 @@ class Main extends Component {
   }
 
   render() {
+    if (!this.props.auth) {
+      return <Redirect push to={{ pathname: "/" }} replace />;
+    }
     return (
       <div>
         <Sidebar />
