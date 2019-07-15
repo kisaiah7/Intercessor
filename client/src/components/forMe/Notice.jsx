@@ -20,9 +20,15 @@ class Notice extends Component {
   }
 
   componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 1000);
+    this.timerID = setInterval(() => this.tick(), 25000);
     this.props.fetchUser();
     this.setTimer();
+    if (this.state.timer <= 0.25) {
+      this.setState({
+        btnText: "enter >",
+        onClick: this.props.exit
+      });
+    }
   }
 
   componentDidUpdate() {

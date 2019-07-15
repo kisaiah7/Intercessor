@@ -5,6 +5,7 @@ import { fetchUser } from "../../actions";
 
 import LogoutAlert from "./LogoutAlert";
 import Settings from "../settings/Settings";
+import Feedback from "./Feedback";
 
 import "../../sass/sidebar.sass";
 import { Link } from "react-router-dom";
@@ -16,6 +17,7 @@ class Sidebar extends React.Component {
       date: new Date(),
       logout_popup: false,
       settings_popup: false,
+      feedback_popup: false,
       color: "sideBar " + props.page,
       checked: false
     };
@@ -104,13 +106,18 @@ class Sidebar extends React.Component {
       this.setState({
         settings_popup: true
       });
+    } else if (e.target.id === "feedback") {
+      this.setState({
+        feedback_popup: true
+      });
     }
   }
 
   exitPopup() {
     this.setState({
       logout_popup: false,
-      settings_popup: false
+      settings_popup: false,
+      feedback_popup: false
     });
   }
 
@@ -136,6 +143,9 @@ class Sidebar extends React.Component {
           <p id="settings" className="link" onClick={this.popup}>
             settings
           </p>
+          <p id="feedback" className="link" onClick={this.popup}>
+            feedback
+          </p>
           <p id="logout" className="link" onClick={this.popup}>
             logout
           </p>
@@ -145,6 +155,9 @@ class Sidebar extends React.Component {
         ) : null}
         {this.state.settings_popup ? (
           <Settings unmountMe={this.exitPopup} />
+        ) : null}
+        {this.state.feedback_popup ? (
+          <Feedback unmountMe={this.exitPopup} />
         ) : null}
       </div>
     );

@@ -34,6 +34,7 @@ require("./routes/prayerRoutes")(app);
 require("./routes/userRoutes")(app);
 require("./routes/groupRoutes")(app);
 require("./routes/verseRoutes")(app);
+require("./routes/mailRoutes")(app);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

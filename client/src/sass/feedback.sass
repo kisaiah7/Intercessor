@@ -1,0 +1,84 @@
+@import "./variables.sass"
+
+.feedback
+  display: flex
+  flex-direction: column
+
+  width: 550px
+
+  border: 1px solid var(--accent)
+  background-color: var(--secondary)
+  padding: 1em 0.5em
+  border-radius: 5px
+
+  text-align: left
+
+  animation: fadeIn 0.75s ease-in-out, floating 3s ease-in-out infinite alternate
+  z-index: 5
+
+  &-exitbtn
+    position: absolute
+    left: 2%
+    top: 5%
+
+    margin-bottom: 40px
+
+    background: none
+    border: none
+    outline: none
+
+    color: var(--accent)
+    font-size: 1.5em
+    font: inherit
+
+    cursor: pointer
+    transition: 0.5s ease
+
+  &__header
+    font-style: italic
+    font-size: 0.9em
+    color: var(--accent-one)
+
+    margin: 20px 28px 10px 44px
+
+  label
+    font-style: italic
+    font-size: 0.9em
+    color: var(--accent-one)
+
+    margin-left: 64px
+
+  &__form
+    &__field
+      @include settings_formfield
+      height: 10em
+      margin-left: 44px
+      resize: none
+
+      &::-webkit-scrollbar
+        width: 1em
+        background-color: var(--primary)
+        border-left: 1px solid var(--accent)
+        border-radius: 0 5px 0 0
+
+      &::-webkit-scrollbar-thumb
+        background-color: var(--accent)
+
+      &.email
+        background: var(--selected)
+        color: var(--primary-two)
+
+        &:hover
+          color: var(--primary-two)
+
+      @media (max-width: 700px)
+        font-size: 1em
+
+      &:hover
+        background: var(--selected)
+        color: #fff
+
+  &__submitbtn
+    @include settings_btn
+    margin-left: 44px
+    width: 82%

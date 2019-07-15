@@ -10,9 +10,7 @@ class Main extends Component {
     super(props);
 
     this.state = {
-      feed: false,
-      menu: true,
-      user: props.user
+      menu: true
     };
   }
 
@@ -21,15 +19,14 @@ class Main extends Component {
     this.props.fetchGroups(this.props.auth.groups);
     this.props.fetchFavGroups(this.props.auth.favGroups);
     this.props.fetchVerse();
+    console.log(this.props);
   }
 
   render() {
-    const fname = this.props.auth.firstName;
-
     return (
       <div>
         <Sidebar />
-        {this.state.menu && <Menu fname={fname} />}
+        {this.state.menu && <Menu />}
       </div>
     );
   }

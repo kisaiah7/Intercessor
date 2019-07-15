@@ -71,7 +71,6 @@ class GroupDetail extends Component {
   onFavoriteChange = e => {
     const isFavorite = e.target.checked;
     const acronym = this.props.group.acronym;
-    const user_email = this.props.auth.email;
 
     this.setState(
       prevState => ({
