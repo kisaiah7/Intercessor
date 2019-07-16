@@ -1,11 +1,8 @@
 @import "./variables.sass"
 
 .noticeContainer
-  width: 98%
-  height: 96%
-
-  border-radius: 20px
-  margin: 20px
+  width: 100%
+  height: 100%
 
   position: absolute
   left: 0
@@ -46,7 +43,7 @@
   align-self: center
 
   @media (max-width: 900px)
-    width: 35%
+    width: 45%
     height: 500px
 
   &-edit_timer
@@ -125,8 +122,10 @@
     cursor: pointer
     transition: 500ms ease
 
+    animation: textSwellNotice 1s ease-in-out infinite alternate
+
     &:hover
-      background-color: $color
+      background-color: $shadow
       color: var(--primary)
 
     @media (max-width: 900px)
@@ -142,7 +141,6 @@
 
       &:hover
         color: var(--gold)
-
 
 .others__notice
   @include bgContainer(var(--purple))

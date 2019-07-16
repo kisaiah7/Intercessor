@@ -20,15 +20,9 @@ class Notice extends Component {
   }
 
   componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 25000);
+    this.timerID = setInterval(() => this.tick(), 15000);
     this.props.fetchUser();
     this.setTimer();
-    if (this.state.timer <= 0.25) {
-      this.setState({
-        btnText: "enter >",
-        onClick: this.props.exit
-      });
-    }
   }
 
   componentDidUpdate() {
@@ -40,10 +34,20 @@ class Notice extends Component {
   }
 
   setTimer() {
-    this.setState({
-      timer: this.props.auth.timer,
-      btnText: this.props.auth.timer + " minutes"
-    });
+    this.setState(
+      {
+        timer: this.props.auth.timer,
+        btnText: this.props.auth.timer + " minutes"
+      },
+      () => {
+        if (this.state.timer < 0.25) {
+          this.setState({
+            btnText: "enter >",
+            onClick: this.props.exit
+          });
+        }
+      }
+    );
   }
 
   tick() {
@@ -93,11 +97,8 @@ class Notice extends Component {
                 <i>
                   <br />
                   <br />
-                  <br />
-                  <br />
                   Before you procede to take on the burdens of others, take a
                   moment to ask God for strength, wisdom, and faith.
-                  <br />
                   <br />
                   <br />
                   <br />

@@ -405,7 +405,10 @@ class Groups extends React.Component {
           />
           {this.renderSearchGroupList()}
         </div>
-        <div style={{ display: this.state.viewDisplay }}>
+        <div
+          className="settings__groups-groupsin"
+          style={{ display: this.state.viewDisplay }}
+        >
           <p className="settings__groups-subtitle">groups you're in:</p>
           {this.renderUserGroupList()}
         </div>
@@ -415,7 +418,10 @@ class Groups extends React.Component {
         >
           {this.state.toggle_text}
         </button>
-        <div style={{ display: this.state.createDisplay }}>
+        <div
+          className="settings__groups-creategrp"
+          style={{ display: this.state.createDisplay }}
+        >
           <form className="settings__groups__form">
             <input
               type="text"

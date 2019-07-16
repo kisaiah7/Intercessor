@@ -28,6 +28,15 @@
 
     color: var(--accent)
 
+    @media (max-width: 900px)
+      font-size: 0.9em
+      left: 3%
+      top: 15%
+      bottom: auto
+
+      border-bottom: none
+      border-top: 1px solid var(--red)
+
     &.fadeIn
       animation: fadeIn 0.75s ease-in-out
 
@@ -101,10 +110,17 @@
       padding: 5px 0
       border-bottom: 1px dashed var(--accent)
 
+      @media (max-width: 900px)
+        padding: 0
+
       &-heading
         color: var(--red)
         padding-bottom: 10px
         letter-spacing: 2px
+
+        @media (max-width: 900px)
+          letter-spacing: 1px
+          padding-top: 10px
 
       &-backBtn
         position: absolute
@@ -119,6 +135,9 @@
         transition: 0.5s ease
         cursor: pointer
 
+        @media (max-width: 900px)
+          top: 7%
+
         &:hover
           border: 1px solid var(--accent)
           color: var(--accent)
@@ -129,18 +148,24 @@
         margin: 15px
         justify-content: center
 
+        @media (max-width: 900px)
+          margin: 5px
+
         &-input
           background-color: var(--primary)
           border: 1px solid var(--accent)
           outline: none
           padding: 0.5em 1em
           margin-right: 5px
-          width: 20%
+          width: 15%
           border-radius: 5px
           color: var(--green)
           font-size: 0.9em
           font: inherit
           cursor: pointer
+
+          @media (max-width: 900px)
+            padding: 0.5em
 
         input[type=radio]
           display: none
@@ -154,6 +179,9 @@
           border: 1px solid var(--accent)
           transition: 0.5s ease-in-out
           cursor: pointer
+
+          @media (max-width: 900px)
+            padding: 8px
 
           &:hover
            background-color: var(--secondary)
@@ -190,10 +218,16 @@
       display: flex
       flex-direction: column
 
+      @media (max-width: 900px)
+        width: 90vw
+
       &-heading
         color: var(--red)
         padding-bottom: 10px
         letter-spacing: 2px
+
+        @media (max-width: 900px)
+          padding-top: 10px
 
       &-backBtn
         position: absolute
@@ -207,6 +241,9 @@
         letter-spacing: 2px
         transition: 0.5s ease
         cursor: pointer
+
+        @media (max-width: 900px)
+          top: 3.5%
 
         &:hover
           border: 1px solid var(--accent)
@@ -222,7 +259,7 @@
 
         font-size: 0.9em
         font: inherit
-        color: var(--secondary)
+        color: var(--red)
         white-space: pre-wrap
 
         overflow-y: scroll
@@ -231,7 +268,7 @@
         white-space: pre-line
 
         &:focus
-          color: var(--primary)
+          color: var(--red)
 
         &::-webkit-scrollbar
           width: 1em
@@ -273,6 +310,10 @@
 
     background-color: var(--secondary)
 
+    @media (max-width: 900px)
+      width: 7em
+      height: 12.6em
+
   .window__sill
     width: 10em
     height: 4em
@@ -281,6 +322,10 @@
     box-shadow: -10px 0 var(--green-one)
 
     background-color: var(--green)
+
+    @media (max-width: 900px)
+      width: 7em
+      height: 2.8em
 
   .bibleverse
     max-width: 50%
@@ -296,5 +341,22 @@
     padding-right: 20px
     border-right: 1px solid var(--red)
 
+    @media (max-width: 900px)
+      bottom: 1%
+      right: 3%
+      left: 3%
+
+      max-width: none
+      padding-right: 0px
+
+      border-right: none
+      border-top: 1px solid var(--red)
+
+      text-align: justify
+      font-size: 0.8em
+
     &__ref
       color: var(--red)
+
+      @media (max-width: 900px)
+        font-size: 0.9em

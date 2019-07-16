@@ -17,6 +17,12 @@
     animation: settingsExpand 0.75s ease-in-out, floating 3s ease-in-out infinite alternate
     z-index: 5
 
+    @media (max-width: 900px)
+      width: 80%
+      flex-direction: column
+      justify-content: center
+      align-items: center
+
   &-exitbtn
     margin-bottom: 40px
 
@@ -37,6 +43,10 @@
 
     color: var(--accent)
 
+    @media (max-width: 900px)
+      flex-direction: row
+      align-self: flex-start
+
     .selected
       color: var(--gold)
 
@@ -53,6 +63,13 @@
 
       border-bottom: 1px solid var(--gold)
 
+      @media (max-width: 900px)
+        padding-bottom: 5px
+        padding-right: 5px
+
+        border-right: 1px solid var(--gold)
+        border-bottom: none
+
     button
       border: none
       outline: none
@@ -65,6 +82,10 @@
 
       cursor: pointer
       transition: 0.5 ease
+
+      @media (max-width: 900px)
+        width: auto
+        margin: 20px 2px
 
       &:hover
         color: var(--gold)

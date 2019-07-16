@@ -2,11 +2,21 @@
 
 .settings
   &__groups
-    width: 588px
     padding: 20px 0
-    max-height: 600px
+    max-height: 700px
+    margin-left: 30px
 
     overflow-y: auto
+
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    @media (max-width: 900px)
+      width: 90%
+      margin: 0
+      padding: 0 0 20px 0
 
     &::-webkit-scrollbar
       width: 1em
@@ -24,6 +34,9 @@
     &__form
       &__field
         @include settings_formfield
+
+        @media (max-width: 900px)
+          width: 91%
 
         &.description
           height: 3em
@@ -51,9 +64,9 @@
      * Renders user's groups
      * Navigate to create group
      * Search database for groups */
-
     &-title
-      margin: 0 40px 40px 65px
+      margin: 0 0 20px 0px
+      width: 90%
 
       font: inherit
       color: var(--accent-one)
@@ -61,15 +74,17 @@
       letter-spacing: 0.5px
       font-style: italic
 
+    &-groupsin
+      width: 90%
+
     &-subtitle
       font: inherit
-      margin-left: 65px
       color: var(--accent-one)
       font-size: 0.9em
       letter-spacing: 4px
 
     &-togglebtn
-      width: 480px
+      width: 90%
 
       font: inherit
       font-size: 0.9em
@@ -81,7 +96,6 @@
       border-radius: 5px
 
       outline: 0
-      margin: 0 0 0px 65px
       padding: 1em
       background-color: var(--accent)
 
@@ -92,14 +106,17 @@
         background-color: var(--gold)
         border: 1px solid var(--primary)
 
+    &-searchbar
+      width: 90%
+
     &-groupView
-      width: 450px
+      width: 94%
       height: 50px
       display: flex
       flex-direction: row
       justify-content: space-between
 
-      margin: 10px 0 30px 65px
+      margin: 10px 0 30px 0
       padding: 0.1em 1em
       border-radius: 5px
       border: 1px solid var(--accent)
@@ -127,20 +144,22 @@
      * Render users as checkboxes
      * Search database for groups */
 
+    &-creategrp
+      width: 90%
+
     &-header
       font: inherit
       font-size: 0.8em
       color: var(--accent)
-      margin-left: 65px
       margin-bottom: -20px
 
     &__foundUserDiv
-      margin: -15px 0 -25px 45px
+      margin: -15px 0 -25px 0
       font-size: 0.9em
 
       ul.foundUserList
         list-style: none
-        padding: 20px
+        padding: 20px 0
         font-size: 0.9em
         letter-spacing: 1px
 

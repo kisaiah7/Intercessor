@@ -5,6 +5,9 @@
     display: flex
     align-items: center
 
+    @media (max-width: 900px)
+      justify-content: center
+
   .theme-switch
     display: inline-block
     height: 20px
@@ -65,6 +68,14 @@
 
   z-index: 3
   animation: fadeFromLeft 0.8s ease-in-out, floating 2s ease-in-out infinite alternate
+
+  @media (max-width: 900px)
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: 1fr 1fr
+
+    font-size: 0.9em
+    
+    top: 2%
 
   &.forMe
     @include toggleBtn(var(--red))

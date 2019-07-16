@@ -32,6 +32,10 @@
   display: flex
   flex-direction: row
 
+  @media (max-width: 900px)
+    flex-direction: column
+    width: 
+
   &.transition
     animation: fadeOut 1s ease-in-out forwards
 
@@ -52,6 +56,9 @@
     z-index: 1
 
     text-align: center
+
+    @media (max-width: 900px)
+      border-left: 1px solid var(--accent)
 
     &__field
       height: 0.5em
@@ -74,7 +81,7 @@
         font-size: 1em
 
       &:hover
-        background: var(--selected)
+        background: var(--shadow)
         color: #fff
 
       &:focus

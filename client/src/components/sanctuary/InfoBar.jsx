@@ -29,7 +29,7 @@ class InfoBar extends Component {
     TIMER
   **/
   componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 1000);
+    this.timerID = setInterval(() => this.tick(), 15000);
     this.setTimer();
 
     if (this.props.topicsText.length < 1) {

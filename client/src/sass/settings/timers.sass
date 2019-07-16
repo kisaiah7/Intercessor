@@ -4,31 +4,40 @@
   &__timer
     display: flex
     flex-direction: column
-    padding: 30px 10px 30px 65px
+    padding: 30px 0
+    margin-left: 30px
 
     color: var(--green)
+
+    @media (max-width: 900px)
+      margin-left: 0
 
     &__header
       font-style: italic
       font-size: 0.9em
       color: var(--accent-one)
+      margin-left: 30px
 
     &__form
       display: flex
       flex-direction: row
+      align-items: center
+      justify-content: center
       margin: 10px 0
 
       &__field
         @include settings_formfield
         height: 0.1em
         margin-left: 0
+        margin-right: 10px
         width: 13%
 
         animation: timerExpand 1s ease-in-out forwards
 
       &-submitbtn
         @include settings_btn
-        margin-left: 0
+        margin-left: 30px
+        width: 82%
 
     label
       margin-left: 4em

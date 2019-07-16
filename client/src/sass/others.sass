@@ -15,12 +15,32 @@
 
     border-right: 1px dashed var(--purple)
 
+    @media (max-width: 900px)
+      font-size: 0.9em
+      display: flex
+      flex-direction: row
+
+      width: auto
+      height: auto
+      max-width: 80px
+      border-right: none
+
+      position: absolute
+      bottom: -117px
+      left: 20px
+      top: auto
+
+      animation: none
+
     .favTitle
       color: var(--purple)
       letter-spacing: 1px
       margin-top: 50px
       font-size: 1em
       font-style: italic
+
+      @media (max-width: 900px)
+        display: none
 
     .favNotice
       color: var(--purple-one)
@@ -48,9 +68,17 @@
       cursor: pointer
       transition: 0.5s ease-in-out
 
+      z-index: 2
+
+      @media (max-width: 900px)
+        margin: 2em 5px
+
       &:hover
         border: 1px dashed var(--accent)
         color: var(--accent)
+
+        @media (max-width: 900px)
+          margin-top: -40px
 
   .right
     width: 75%
@@ -69,9 +97,17 @@
     color: var(--purple)
     letter-spacing: 1px
 
+    @media (max-width: 900px)
+      margin-right: 0.5em
+      width: 95%
+      padding: 0 1em
+
     .groupName
       color: var(--purple)
       font-size: 2em
+
+      @media (max-width: 900px)
+        display: none
 
     .filterNotice
       align-self: center
@@ -100,6 +136,9 @@
 
       transition: 0.5s ease
       cursor: pointer
+
+      @media (max-width: 900px)
+        width: 100%
 
       span
         color: var(--purple-one)
@@ -135,6 +174,11 @@
     outline: none
     cursor: pointer
     transition: 0.5s ease
+
+    z-index: 1
+
+    @media (max-width: 900px)
+      right: 8%
 
     &.end
       border: 1px solid var(--red)
@@ -247,6 +291,9 @@
 
   animation: fadeIn 2s ease forwards
 
+  @media (max-width: 900px)
+    width: 95vw
+
   &.exitTransition
     animation: fadeOut 1s ease forwards
 
@@ -254,8 +301,11 @@
     display: flex
     flex-direction: row
 
+    @media (max-width: 900px)
+      font-size: 0.9em
+
     &-exit
-      width: 5%
+      width: auto
 
       border: none
       border-bottom: 1px solid var(--purple)
@@ -276,10 +326,13 @@
         color: var(--accent)
 
     &-date
-      width: 15%
+      width: auto
 
       border-bottom: 1px solid var(--purple)
       padding: 0.3em 2em
+
+      @media (max-width: 900px)
+        padding: 0.3em 0.5em
 
     &-blurb
       width: 100%
@@ -287,6 +340,9 @@
       border-left: 1px solid var(--purple)
       border-bottom: 1px solid var(--purple)
       padding: 0.3em 2em
+
+      @media (max-width: 900px)
+        padding: 0.3em 0.5em
 
   &__bottom
     display: flex
@@ -298,6 +354,9 @@
       padding: 2em
 
       white-space: pre-line
+
+      @media (max-width: 900px)
+        padding: 1em
 
     &-btn
       padding-right: 2em

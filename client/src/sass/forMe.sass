@@ -22,6 +22,7 @@
   display: flex
   flex-direction: row
   align-items: center
+  justify-content: center
 
   &.enterTransition
     animation: fadeIn 1s ease forwards
@@ -30,16 +31,33 @@
     width: 10%
     height: 100vh
 
-    margin: 12% 0 0 -5%
-    padding: 3em 5em 3em 0
-
+    position: absolute
+    top: 10%
+    left: -10px
     animation: floating-sm 2s ease-in-out infinite alternate
+
+    @media (max-width: 900px)
+      font-size: 0.9em
+      display: flex
+      flex-direction: row
+
+      width: auto
+      height: auto
+      max-width: 80px
+
+      bottom: -75px
+      left: 20px
+      top: auto
+
+      animation: none
 
     &-header
       color: var(--red)
-      margin-top: 70px
-      margin-bottom: -20px
+      margin: 100px 0 -20px 20px
       font-style: italic
+
+      @media (max-width: 900px)
+        display: none
 
     &-group
       width: 100%
@@ -56,9 +74,15 @@
       cursor: pointer
       transition: 0.5s ease-in-out
 
+      @media (max-width: 900px)
+        margin: 2em 5px
+
       &:hover
         border: 1px dashed var(--gold)
         color: var(--gold)
+
+        @media (max-width: 900px)
+          margin-top: -40px
 
   &__form
     width: 70vw
@@ -66,7 +90,7 @@
     background-color: var(--secondary)
     box-shadow: 20px 20px var(--shadow)
     border: 1px solid var(--red)
-    border-radius: 5px
+    border-radius: 6px
 
     color: var(--red)
     font-style: italic
@@ -74,12 +98,16 @@
 
     animation: floating-sm 2s ease-in-out infinite alternate
 
+    @media (max-width: 900px)
+      box-shadow: 10px 10px var(--shadow)
+      width: 85vw
+
     &-top
       display: flex
       flex-direction: row
 
       &-date
-        width: 15%
+        width: auto
 
         border-bottom: 1px solid var(--red)
         border-right: 1px solid var(--red)
@@ -87,9 +115,12 @@
 
         color: var(--red)
 
+        @media (max-width: 900px)
+          padding: 0.8em 5px
+          font-size: 0.9em
+
         &:focus
           color: var(--red)
-
       &-title
         width: 100%
 
@@ -106,7 +137,7 @@
 
       &-body
         height: 40vh
-        width: 95.2%
+        width: auto
 
         padding: 2em
         background-color: var(--secondary)
@@ -116,6 +147,7 @@
         letter-spacing: 1px
         overflow-y: scroll
         resize: none
+
 
         &:focus
           color: var(--red)
@@ -132,7 +164,22 @@
           min-height: 50px
 
       &-recipients
-        padding: 0.5em 2em 0.5em 2em
+        padding: 0.5em 2em
+
+        @media (max-width: 900px)
+          padding: 0.5em
+
+        label
+          display: inline
+
+        .form
+          &__field
+            color: var(--red-one)
+            width: 60%
+            background-color: var(--primary)
+            padding: 5px
+            margin-top: 5px
+            border: 0.5px dashed var(--red-one)
 
         ul.foundQueryList
           list-style: none
@@ -145,12 +192,14 @@
 
             label
               display: inline-block
-              width: 100%
+              width: auto
+              max-width: 100%
+              height: auto
               background-color: var(--secondary)
               border: 1px solid var(--red)
               color: var(--red)
+              overflow-wrap: break-word
               border-radius: 1px
-              white-space: nowrap
               margin: 3px 0px
               transition: 1s ease
               padding: 8px 12px

@@ -10,11 +10,8 @@
 
   animation: fadeIn 1s ease-in forwards, floating 2s ease-in-out infinite alternate
 
-  @media (max-width: 600px)
-    grid-template-columns: 1fr
-    grid-template-rows: auto auto
-
-    position: static
+  @media (max-width: 900px)
+    flex-direction: column
 
   .titleBtn
     width: 90%
@@ -127,6 +124,9 @@
 
   z-index: 1
 
+  @media (max-width: 900px)
+    width: 70vw
+
   &.invisible
     display: none
     z-index: 0
@@ -150,9 +150,9 @@
 
       transition: all 200ms ease-in
 
-      @media (max-width: 700px)
+      @media (max-width: 900px)
         font-size: 1em
-        width: 85%
+        margin-left: -8px
 
       &:hover
         background: var(--selected)
@@ -214,7 +214,14 @@
 // ** Animation Classes ** //
 .moveToLeft
   animation: moveToLeft 0.8s ease-in-out
+
+  @media (max-width: 900px)
+    animation: moveToUp 0.8s ease-in-out
+
 .fadeOutIn
   animation: fadeOutIn 2s ease-in-out forwards
+
+  @media (max-width: 900px)
+    animation: shrink 0.8s ease-in-out forwards
 .fadeIn
   animation: fadeIn 0.8s ease-in-out forwards

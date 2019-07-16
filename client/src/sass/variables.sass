@@ -75,10 +75,10 @@ $purple-1: darken($purple, 10%)
   cursor: pointer
 
 @mixin settings_btn
-  margin: 20px 0 30px 65px
+  margin: 20px 0 30px 0
   padding: 0.8em
 
-  width: 487px
+  width: 90%
 
   border: none
   border-top: 1px solid var(--gold)
@@ -103,11 +103,12 @@ $purple-1: darken($purple, 10%)
 
 @mixin settings_formfield
   height: 0.5em
+  width: 500px
 
   border: 1px solid var(--accent)
   outline: 0
-  padding: 1em
-  margin: 1em 1em 0em 4em
+  padding: 1.2em
+  margin: 1em 0 0 0
   border-radius: 5px
 
   background: none
@@ -122,6 +123,28 @@ $purple-1: darken($purple, 10%)
   animation: formExpand 1s ease-in-out forwards
 
 //** keyframes **//
+@keyframes shrink
+  0%
+    width: 200.44px
+
+  100%
+    width: 45vw
+    padding: 1em 0.5em
+
+@keyframes textSwellSanctuary
+  0%
+    color: var(--accent-one)
+
+  100%
+    color: var(--red)
+
+@keyframes textSwellNotice
+  0%
+    color: var(--purple)
+
+  100%
+    color: var(--red)
+
 @keyframes fadeInUp
   0%
     margin-top: 300px
@@ -209,6 +232,13 @@ $purple-1: darken($purple, 10%)
     100%
       transform: translate(-24vw, 0)
 
+@keyframes moveToUp
+    0%
+      transform: translate(0, 0)
+
+    100%
+      transform: translate(0, -24vw)
+
 @keyframes fadeFromLeft
     0%
       margin-left: -300px
@@ -231,14 +261,12 @@ $purple-1: darken($purple, 10%)
 
 @keyframes formExpand
     0%
-      width: 0
       opacity: 0
 
     75%
       opacity: 0.5
 
     100%
-      width: 76%
       opacity: 1
 
 @keyframes nameExpand
