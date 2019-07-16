@@ -74,16 +74,6 @@ module.exports = app => {
   }
 
   /*
-      CHECK FOR LOGIN
-  */
-  function requireLogin(req, res, next) {
-    if (!req.user) return res.redirect("/");
-    return;
-  }
-
-  app.get("/menu", requireLogin);
-
-  /*
       REGISTER LOCAL STRATEGY
   */
   app.post(
