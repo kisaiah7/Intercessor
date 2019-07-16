@@ -78,6 +78,7 @@ module.exports = app => {
   */
   function requireLogin(req, res, next) {
     if (!req.user) return res.redirect("/");
+    return;
   }
 
   app.get("/menu", requireLogin);
