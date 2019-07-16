@@ -78,12 +78,9 @@ module.exports = app => {
   */
   function requireLogin(req, res, next) {
     if (!req.user) return res.redirect("/");
-    next();
   }
 
-  app.get("/menu", requireLogin, function(req, res) {
-    res.render("Menu");
-  });
+  app.get("/menu", requireLogin);
 
   /*
       REGISTER LOCAL STRATEGY
