@@ -82,7 +82,7 @@ module.exports = app => {
   }
 
   app.get("/menu", requireLogin, function(req, res) {
-    res.render("Menu", { user: req.user });
+    res.send("Menu", { user: req.user });
   });
 
   /*
