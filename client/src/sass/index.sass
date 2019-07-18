@@ -1,25 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Cutive+Mono")
 @import "./variables.sass"
 
-\[data-theme="dark"]
-  --primary: #{$primary}
-  --secondary: #{$secondary}
-  --accent: #{$accent}
-  --selected: #{$primary-1-dark}
-  --primary-one: #{$primary-1}
-  --primary-two: #{$primary-2}
-  --secondary-one: #{$secondary-1}
-  --accent-one: #{$accent-1}
-  --shadow: #{$shadow}
-  --gold: #{$gold}
-  --gold-one: #{$gold-1}
-  --green: #{$green}
-  --green-one: #{$green-1}
-  --red: #{$red}
-  --red-one: #{$red-1}
-  --purple: #{$purple}
-  --purple-one: #{$purple-1}
-
 \:root
   --primary: #{$primary-dark}
   --secondary: #{$secondary-dark}
@@ -39,6 +20,30 @@
   --purple: #{$purple-dark}
   --purple: #{$purple-dark}
   --purple-one: #{$purple-1-dark}
+
+\[data-theme="dark"]
+  --primary: #{$primary}
+  --secondary: #{$secondary}
+  --accent: #{$accent}
+  --selected: #{$shadow}
+  --primary-one: #{$primary-1}
+  --primary-two: #{$primary-2}
+  --secondary-one: #{$secondary-1}
+  --accent-one: #{$accent-1}
+  --shadow: #{$shadow}
+  --gold: #{$gold}
+  --gold-one: #{$gold-1}
+  --green: #{$green}
+  --green-one: #{$green-1}
+  --red: #{$red}
+  --red-one: #{$red-1}
+  --purple: #{$purple}
+  --purple-one: #{$purple-1}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+  background-color: var(--selected)
 
 body
   margin: 0
