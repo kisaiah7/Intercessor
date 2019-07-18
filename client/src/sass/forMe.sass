@@ -148,7 +148,6 @@
         overflow-y: scroll
         resize: none
 
-
         &:focus
           color: var(--red)
 
@@ -159,9 +158,6 @@
 
         &::-webkit-scrollbar-thumb
           background-color: var(--red)
-
-        .force-overflow
-          min-height: 50px
 
       &-recipients
         padding: 0.5em 2em
@@ -187,6 +183,17 @@
           letter-spacing: 1px
           margin-right: 4em
 
+          max-height: 50px
+          overflow-y: auto
+
+          &::-webkit-scrollbar
+            width: 1em
+            background-color: var(--primary)
+            border: 1px solid var(--red)
+
+          &::-webkit-scrollbar-thumb
+            background-color: var(--red)
+
           li
             display: inline
 
@@ -204,6 +211,9 @@
               transition: 1s ease
               padding: 8px 12px
               cursor: pointer
+
+              margin-right: 10px
+              margin-bottom: 10px
 
               &.selected
                 width: auto

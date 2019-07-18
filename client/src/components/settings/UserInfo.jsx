@@ -100,7 +100,8 @@ class UserInfo extends React.Component {
     return (
       <div className="settings__userInfo">
         <p className="settings__userInfo__header">
-          me: a beloved child of God, saved by grace and faith alone, an
+          {this.props.auth.firstName} {this.props.auth.lastName}: a beloved
+          child of God, saved by grace and faith alone, an
           <span> intercessor</span> for the nations
         </p>
         <form className="settings__userInfo__form">
