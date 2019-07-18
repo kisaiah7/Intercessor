@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchUser } from "../actions";
+import Typing from "react-typing-animation";
 
 import LoginPage from "./Login.jsx";
 import Main from "./Main";

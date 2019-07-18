@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import Typing from "react-typing-animation";
 
 import Login from "./login/";
 import Register from "./login/Register";
@@ -135,15 +136,20 @@ class LoginPage extends Component {
                 <div className="slider round" />
               </label>
             </div>
-            {this.state.greetingText}
-            <br />
-            Intercessor
+            <Typing>
+              {this.state.greetingText}
+              <br />
+              Intercessor
+            </Typing>
           </div>
           <button
             className={this.state.titleBtnStyle}
             onClick={this.toggleForm}
           >
-            {this.state.titleBtnText}
+            <Typing speed={200}>
+              <Typing.Delay ms={500} />
+              {this.state.titleBtnText}
+            </Typing>
           </button>
         </div>
 
