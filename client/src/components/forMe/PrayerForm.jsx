@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 
 import Sidebar from "../menu/Sidebar";
+import Settings from "../settings/Settings";
 import Notice from "./Notice";
 
 import "../../sass/forMe.sass";
@@ -24,7 +25,8 @@ class PrayerForm extends Component {
       query: "",
       query_results: [],
       selected_results: [],
-      selected: false
+      selected: false,
+      settings_popup: false
     };
   }
 
@@ -303,6 +305,18 @@ class PrayerForm extends Component {
     }
   };
 
+  popup = () => {
+    this.setState({
+      settings_popup: true
+    });
+  };
+
+  exitPopup = () => {
+    this.setState({
+      settings_popup: false
+    });
+  };
+
   render() {
     const { body, title } = this.state;
 
@@ -323,8 +337,19 @@ class PrayerForm extends Component {
       <div className={this.state.enterTransition}>
         <Sidebar onClick={this.toMenu} page="forMe" />
         {this.state.displayNotice && <Notice exit={this.exitNotice} />}
+        {this.state.settings_popup ? (
+          <Settings unmountMe={this.exitPopup} toGroups={true} />
+        ) : null}
         <div className="prayerForm__favGroups">
           <p className="prayerForm__favGroups-header">favorite groups:</p>
+          {this.state.fav_groups.length < 1 && (
+            <p
+              className="prayerForm__favGroups-header-favNotice"
+              onClick={this.popup}
+            >
+              you have not favorited any groups!
+            </p>
+          )}
           {this.renderGroupList()}
         </div>
         <div className="prayerForm__form">
