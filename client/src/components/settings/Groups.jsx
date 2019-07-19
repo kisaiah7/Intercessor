@@ -116,6 +116,7 @@ class Groups extends React.Component {
   renderUserGroupList() {
     const user_fav_groups = this.props.auth.favGroups;
 
+    console.log(this.state.user_groups.length);
     if (this.state.user_groups.length < 1) {
       return (
         <div className="settings__groups-groupView">
