@@ -116,7 +116,7 @@ class Groups extends React.Component {
   renderUserGroupList() {
     const user_fav_groups = this.props.auth.favGroups;
 
-    if (this.state.user_groups == null) {
+    if (this.state.user_groups.length < 1) {
       return (
         <div className="settings__groups-groupView">
           <p className="group">You are not in any groups.</p>
