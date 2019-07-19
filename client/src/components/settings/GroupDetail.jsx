@@ -145,24 +145,27 @@ class GroupDetail extends Component {
         group_acronym,
         user_acronym
       });
+      this.props.fetchUser();
+
+      this.getUpdatedMemberList();
 
       if (leave_group.data.success) {
-        console.log("LEAVE");
         this.setState({
           btn_text: "join group"
         });
-        this.getUpdatedMemberList();
       }
     } else {
       const join_group = await axios.post("/api/join_group", {
         group_acronym,
         user_acronym
       });
+      this.props.fetchUser();
+
+      this.getUpdatedMemberList();
       if (join_group.data.success) {
         this.setState({
           btn_text: "leave group"
         });
-        this.getUpdatedMemberList();
       }
     }
     this.props.fetchUser();

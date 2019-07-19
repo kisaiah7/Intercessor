@@ -36,7 +36,7 @@ class Groups extends React.Component {
   componentWillMount() {
     this.props.fetchUser();
     this.renderUserGroups();
-    this.props.fetchGroups();
+    this.props.fetchGroups(this.props.auth.groups);
   }
 
   //1****************SEARCH FOR GROUPS*****************//
@@ -337,6 +337,7 @@ class Groups extends React.Component {
       this.resetSubmitBtn();
     }
     this.props.fetchUser();
+    this.props.fetchGroups(this.props.auth.groups);
   };
   //**************************************************3//
 
@@ -347,23 +348,29 @@ class Groups extends React.Component {
    * onGroupClick: clicking a group expands to more detailed view
    **/
   toggleView = () => {
-    if (this.state.toggle_text === "create a new group >") {
-      this.setState({
-        toggle_text: "view group list >",
-        createDisplay: "block",
-        viewDisplay: "none",
-        searchDisplay: "none"
-      });
-    } else if (this.state.toggle_text === "view group list >") {
-      this.renderUserGroups();
-      this.setState({
-        toggle_text: "create a new group >",
-        createDisplay: "none",
-        viewDisplay: "block",
-        searchDisplay: "flex",
-        toggle_detail: false
-      });
-    }
+    this.props.fetchUser();
+    this.props.fetchGroups(this.props.auth.groups);
+    this.renderUserGroups();
+    console.log(this.props.groups);
+    setTimeout(() => {
+      if (this.state.toggle_text === "create a new group >") {
+        this.setState({
+          toggle_text: "view group list >",
+          createDisplay: "block",
+          viewDisplay: "none",
+          searchDisplay: "none"
+        });
+      } else if (this.state.toggle_text === "view group list >") {
+        this.renderUserGroups();
+        this.setState({
+          toggle_text: "create a new group >",
+          createDisplay: "none",
+          viewDisplay: "block",
+          searchDisplay: "flex",
+          toggle_detail: false
+        });
+      }
+    }, 300);
   };
 
   _handleKeyDown = e => {
