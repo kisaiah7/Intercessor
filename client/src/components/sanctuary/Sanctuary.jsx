@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
 import axios from "axios";
+
+import Typing from "react-typing-animation";
 
 import Sidebar from "../menu/Sidebar";
 import Prompt from "./Prompt";
@@ -85,8 +86,10 @@ class Sanctuary extends Component {
         <span className="window__top" />
         <span className="window__sill" />
         <div className="bibleverse">
-          <p className="bibleverse__verse">{this.state.verse}</p>
-          <p className="bibleverse__ref">{this.state.ref}</p>
+          <Typing>
+            <p className="bibleverse__verse">{this.state.verse}</p>
+            <p className="bibleverse__ref">{this.state.ref}</p>
+          </Typing>
         </div>
       </div>
     );
