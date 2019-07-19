@@ -27,7 +27,7 @@ class Settings extends React.Component {
     this.credits = this.credits.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     if (this.props.toGroups) {
       this.groups();
     } else if (this.props.toTimer) {

@@ -21,7 +21,7 @@ class NewUser extends Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchUser();
   }
 

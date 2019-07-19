@@ -12,7 +12,7 @@ class FilterGroups extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchUser();
     this.group_details();
     this.props.fetchGroups();

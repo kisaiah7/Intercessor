@@ -16,7 +16,7 @@ class GroupDetail extends Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchUser();
     this.getMemberInfo();
     this.renderFavorite();

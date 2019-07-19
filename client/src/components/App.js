@@ -16,7 +16,7 @@ import Santuary from "./sanctuary/Sanctuary";
 import "../sass/index.sass";
 
 class App extends Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchUser();
 
     if (!this.props.auth) {

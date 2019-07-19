@@ -15,7 +15,7 @@ class Main extends Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchUser();
     this.props.fetchGroups(this.props.auth.groups);
     this.props.fetchFavGroups(this.props.auth.favGroups);

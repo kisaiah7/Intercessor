@@ -19,7 +19,7 @@ class PrayerDetail extends Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const {
       date,
       title,

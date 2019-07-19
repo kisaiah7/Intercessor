@@ -20,7 +20,7 @@ class UserInfo extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const user = this.props.auth;
 
     this.setState({

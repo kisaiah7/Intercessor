@@ -81,7 +81,7 @@ class Sidebar extends React.Component {
     return hour + ":" + minute + suffix;
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchUser();
     this.timerID = setInterval(() => this.tick(), 60000);
     this.renderUserTheme();

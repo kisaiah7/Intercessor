@@ -16,7 +16,7 @@ class Timers extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchUser();
     this.setTimer();
   }

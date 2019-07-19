@@ -28,7 +28,7 @@ class PrayerForm extends Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     console.log(this.props);
     this.setState({
       fav_groups: this.props.fav

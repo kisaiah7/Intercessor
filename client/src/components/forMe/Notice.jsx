@@ -19,7 +19,7 @@ class Notice extends Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.timerID = setInterval(() => this.tick(), 15000);
     this.props.fetchUser();
     this.setTimer();

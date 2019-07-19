@@ -32,7 +32,7 @@ class LoginPage extends Component {
     this.register = this.register.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchUser();
 
     console.log("login", this.props);

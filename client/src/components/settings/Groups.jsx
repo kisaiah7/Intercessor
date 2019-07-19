@@ -33,7 +33,7 @@ class Groups extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchUser();
     this.renderUserGroups();
     this.props.fetchGroups();

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
 import axios from "axios";
 
 import Sidebar from "../menu/Sidebar";
@@ -84,8 +85,8 @@ class Sanctuary extends Component {
         <span className="window__top" />
         <span className="window__sill" />
         <div className="bibleverse">
-          <p className="bibleverse__verse">asdf</p>
-          <p className="bibleverse__ref">asdf</p>
+          <p className="bibleverse__verse">{this.state.verse}</p>
+          <p className="bibleverse__ref">{this.state.ref}</p>
         </div>
       </div>
     );
