@@ -107,6 +107,8 @@ class Groups extends React.Component {
     let groups = this.props.groups;
     let fav_group_acronyms = this.props.auth.favGroups;
 
+    console.log("ASDF", groups);
+
     this.setState({
       user_groups: groups,
       fav_groups: fav_group_acronyms

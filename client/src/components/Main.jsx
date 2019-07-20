@@ -21,6 +21,7 @@ class Main extends Component {
     this.props.fetchFavGroups(this.props.auth.favGroups);
     this.props.fetchVerse();
     console.log("menu", this.props);
+    console.log("menu1", this.props.groups);
   }
 
   render() {
@@ -36,8 +37,8 @@ class Main extends Component {
   }
 }
 
-function mapStateToProps({ auth }) {
-  return { auth };
+function mapStateToProps({ auth, groups }) {
+  return { auth, groups };
 }
 
 export default connect(
