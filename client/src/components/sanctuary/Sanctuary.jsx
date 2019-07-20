@@ -27,7 +27,6 @@ class Sanctuary extends Component {
   }
 
   componentDidMount = () => {
-    console.log(this.props);
     this.setState({
       verse: this.props.verse.verse,
       ref: this.props.verse.ref

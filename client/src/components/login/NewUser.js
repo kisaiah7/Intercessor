@@ -65,8 +65,6 @@ class NewUser extends Component {
     // Grab state
     const { firstName, lastName, church, acronym, gender } = this.state;
 
-    console.log("AUTH", this.props.auth);
-
     const email = this.props.auth.email;
 
     const updateUser = await axios.post("/api/new_user", {

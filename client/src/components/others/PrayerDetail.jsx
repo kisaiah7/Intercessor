@@ -28,7 +28,7 @@ class PrayerDetail extends Component {
       user_acronym,
       user_gender
     } = this.props;
-    console.log(typeof date);
+
     this.setState({
       date: date.substring(0, 10),
       title,

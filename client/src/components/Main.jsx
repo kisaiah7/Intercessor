@@ -20,8 +20,6 @@ class Main extends Component {
     this.props.fetchGroups(this.props.auth.groups);
     this.props.fetchFavGroups(this.props.auth.favGroups);
     this.props.fetchVerse();
-    console.log("menu", this.props);
-    console.log("menu1", this.props.groups);
   }
 
   render() {

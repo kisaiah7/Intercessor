@@ -107,7 +107,6 @@ class GroupDetail extends Component {
   getMemberInfo = async members => {
     let acronyms;
 
-    console.log("GETTITT", members);
     if (members == null) {
       acronyms = this.props.group.members;
     } else {

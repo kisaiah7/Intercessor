@@ -142,7 +142,6 @@ class PrayerFeed extends Component {
     let group_prayers;
 
     if (this.state.group_acronym === group_acronym) {
-      console.log("current page is", load_page);
       load_page++;
       this.setState(prevState => {
         return {
@@ -196,8 +195,6 @@ class PrayerFeed extends Component {
   };
 
   onFavGroupClick = group => {
-    console.log(group);
-
     if (this.state.group_acronym !== group) {
       this.setState({
         group_acronym: group

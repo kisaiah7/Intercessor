@@ -22,8 +22,6 @@ class App extends Component {
     if (!this.props.auth) {
       return <Redirect push to={{ pathname: "/" }} replace />;
     }
-
-    console.log("from APP", this.props.auth);
   }
   render() {
     return (

@@ -107,8 +107,6 @@ class Groups extends React.Component {
     let groups = this.props.groups;
     let fav_group_acronyms = this.props.auth.favGroups;
 
-    console.log("ASDF", groups);
-
     this.setState({
       user_groups: groups,
       fav_groups: fav_group_acronyms
@@ -118,9 +116,6 @@ class Groups extends React.Component {
   renderUserGroupList() {
     const user_fav_groups = this.props.auth.favGroups;
 
-    console.log(this.state.user_groups.length);
-    console.log(this.state.user_groups);
-    console.log("fav", user_fav_groups);
     if (this.state.user_groups.length < 1) {
       return (
         <div className="settings__groups-groupView">
@@ -129,7 +124,6 @@ class Groups extends React.Component {
       );
     } else {
       return this.state.user_groups.map(group => {
-        console.log(group);
         if (user_fav_groups.includes(group.acronym)) {
           return this.groupView("settings__groups-groupView isFavorite", group);
         } else {
@@ -358,7 +352,6 @@ class Groups extends React.Component {
     this.props.fetchUser();
     this.props.fetchGroups(this.props.auth.groups);
     this.renderUserGroups();
-    console.log(this.props.groups);
     setTimeout(() => {
       if (this.state.toggle_text === "create a new group >") {
         this.setState({

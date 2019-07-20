@@ -1,7 +1,6 @@
 module.exports = async (req, res, next) => {
   let { email, password, vpassword } = req.body;
 
-  console.log("ASLFBSDLJFNASJDFBaskdjfb");
   if (!password || !vpassword) {
     return res.send({ success: false, message: "Password is required." });
   }
@@ -35,7 +34,6 @@ module.exports = async (req, res, next) => {
     if (err) {
       return console.log(err);
     }
-    console.log("yay");
     res.send({ success: true, message: "Registering...", user: user });
     next();
   });

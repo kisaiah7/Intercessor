@@ -34,8 +34,6 @@ class LoginPage extends Component {
 
   componentWillMount() {
     this.props.fetchUser();
-
-    console.log("login", this.props);
   }
 
   toggleTheme = e => {

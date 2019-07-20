@@ -31,7 +31,6 @@ class PrayerForm extends Component {
   }
 
   componentWillMount() {
-    console.log(this.props);
     this.setState({
       fav_groups: this.props.fav
     });
@@ -133,7 +132,6 @@ class PrayerForm extends Component {
     if (search_users.data.user) {
       query_results = search_users.data.user;
     }
-    console.log(query_results);
 
     this.setState({
       query_results: query_results
@@ -187,8 +185,6 @@ class PrayerForm extends Component {
   onSelect = e => {
     let edited_results;
     let sl_results = this.state.selected_results;
-
-    console.log(e.target.value);
 
     if (e.target.checked) {
       edited_results = sl_results.concat(e.target.value);
@@ -275,8 +271,6 @@ class PrayerForm extends Component {
     });
     // Grab state
     const { title, body, selected_results } = this.state;
-
-    console.log(selected_results);
 
     if (title === "") {
       return this.setState({
