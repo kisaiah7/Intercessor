@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import Typing from "react-typing-animation";
 
 import Login from "./login/";
 import Register from "./login/Register";
@@ -134,11 +133,9 @@ class LoginPage extends Component {
                 <div className="slider round" />
               </label>
             </div>
-            <Typing>
-              {this.state.greetingText}
-              <br />
-              Intercessor
-            </Typing>
+            {this.state.greetingText}
+            <br />
+            Intercessor
           </div>
           <button
             className={this.state.titleBtnStyle}
