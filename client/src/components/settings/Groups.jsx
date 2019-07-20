@@ -126,6 +126,7 @@ class Groups extends React.Component {
       );
     } else {
       return this.state.user_groups.map(group => {
+        console.log(group);
         if (user_fav_groups.includes(group.acronym)) {
           return this.groupView("settings__groups-groupView isFavorite", group);
         } else {
