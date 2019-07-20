@@ -117,6 +117,7 @@ class Groups extends React.Component {
     const user_fav_groups = this.props.auth.favGroups;
 
     console.log(this.state.user_groups.length);
+    console.log(this.state.user_groups);
     console.log("fav", user_fav_groups);
     if (this.state.user_groups.length < 1) {
       return (
