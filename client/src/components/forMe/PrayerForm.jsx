@@ -7,6 +7,8 @@ import Sidebar from "../menu/Sidebar";
 import Settings from "../settings/Settings";
 import Notice from "./Notice";
 
+import { fetchFavGroups } from "../../actions";
+
 import "../../sass/forMe.sass";
 
 class PrayerForm extends Component {
@@ -31,6 +33,7 @@ class PrayerForm extends Component {
   }
 
   componentWillMount() {
+    this.props.fetchFavGroups(this.props.auth.favGroups);
     this.setState({
       fav_groups: this.props.fav
     });
@@ -306,9 +309,16 @@ class PrayerForm extends Component {
   };
 
   exitPopup = () => {
+    this.props.fetchFavGroups(this.props.auth.favGroups);
     this.setState({
-      settings_popup: false
+      fav_groups: this.props.fav
     });
+    console.log(this.props.fav);
+    setTimeout(() => {
+      this.setState({
+        settings_popup: false
+      });
+    }, 1000);
   };
 
   render() {
@@ -345,6 +355,14 @@ class PrayerForm extends Component {
             </p>
           )}
           {this.renderGroupList()}
+          {this.state.fav_groups.length > 0 && (
+            <p
+              className="prayerForm__favGroups-header-favNotice"
+              onClick={this.popup}
+            >
+              edit favorites list
+            </p>
+          )}
         </div>
         <div className="prayerForm__form">
           <form className="prayerForm__form-right">
@@ -400,5 +418,5 @@ function mapStateToProps({ auth, groups, fav }) {
 
 export default connect(
   mapStateToProps,
-  {}
+  { fetchFavGroups }
 )(PrayerForm);

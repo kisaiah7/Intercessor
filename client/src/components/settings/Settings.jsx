@@ -1,9 +1,13 @@
 import React from "react";
 import "../../sass/settings/settings.sass";
+import { connect } from "react-redux";
+
 import UserInfo from "./UserInfo";
 import Groups from "./Groups";
 import Timers from "./Timers";
 import Credits from "./Credits";
+
+import { fetchUser, fetchGroups, fetchFavGroups } from "../../actions";
 
 class Settings extends React.Component {
   constructor(props) {
@@ -85,6 +89,9 @@ class Settings extends React.Component {
   }
 
   exitPopup() {
+    this.props.fetchUser();
+    this.props.fetchGroups(this.props.auth.groups);
+    this.props.fetchFavGroups(this.props.auth.favGroups);
     this.setState({
       fadeOutClass: "alertContainer fadeOut"
     });
@@ -135,4 +142,11 @@ class Settings extends React.Component {
   }
 }
 
-export default Settings;
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(
+  mapStateToProps,
+  { fetchUser, fetchGroups, fetchFavGroups }
+)(Settings);

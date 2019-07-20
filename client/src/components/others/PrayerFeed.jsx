@@ -259,6 +259,11 @@ class PrayerFeed extends Component {
             </p>
           )}
           {this.renderGroupList()}
+          {this.state.fav_groups.length > 0 && (
+            <p className="favNotice" onClick={this.popup}>
+              edit favorites list
+            </p>
+          )}
         </div>
         <div className="right" id="scroll">
           {this.state.group_acronym === "none" && (

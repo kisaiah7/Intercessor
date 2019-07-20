@@ -111,6 +111,7 @@ module.exports = app => {
   */
   app.post("/api/find_user", async (req, res) => {
     const { user_info } = req.body;
+    console.log(user_info);
     let user_results = [];
 
     const email = await User.find({ email: user_info }).lean();
