@@ -117,20 +117,22 @@ class Groups extends React.Component {
     const user_fav_groups = this.props.auth.favGroups;
 
     console.log(this.state.user_groups.length);
+    console.log("fav", user_fav_groups);
     if (this.state.user_groups.length < 1) {
       return (
         <div className="settings__groups-groupView">
           <p className="group">You are not in any groups.</p>
         </div>
       );
+    } else {
+      return this.state.user_groups.map(group => {
+        if (user_fav_groups.includes(group.acronym)) {
+          return this.groupView("settings__groups-groupView isFavorite", group);
+        } else {
+          return this.groupView("settings__groups-groupView", group);
+        }
+      });
     }
-    return this.state.user_groups.map(group => {
-      if (user_fav_groups.includes(group.acronym)) {
-        return this.groupView("settings__groups-groupView isFavorite", group);
-      } else {
-        return this.groupView("settings__groups-groupView", group);
-      }
-    });
   }
 
   groupView = (className, group) => {
