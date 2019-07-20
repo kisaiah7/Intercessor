@@ -73,9 +73,13 @@ class Notice extends Component {
   };
 
   exitPopup = () => {
-    this.setState({
-      settings_popup: false
-    });
+    this.props.fetchUser();
+    this.setTimer();
+    setTimeout(() => {
+      this.setState({
+        settings_popup: false
+      });
+    }, 300);
   };
 
   render() {

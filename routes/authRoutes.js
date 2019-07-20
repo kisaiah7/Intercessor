@@ -115,6 +115,7 @@ module.exports = app => {
     const user = await User.findOne({ email: email });
     user.firstName = firstName;
     user.lastName = lastName;
+    user.fullName = firstName + " " + lastName;
     user.acronym = acronym;
     user.gender = gender;
     user.church = church;

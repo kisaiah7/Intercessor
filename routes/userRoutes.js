@@ -116,6 +116,7 @@ module.exports = app => {
     const email = await User.find({ email: user_info }).lean();
     const fname = await User.find({ firstName: user_info }).lean();
     const lname = await User.find({ lastName: user_info }).lean();
+    const flname = await User.find({ fullName: user_info }).lean();
     const acronym = await User.find({ acronym: user_info }).lean();
 
     user_results = email.concat(fname, lname, acronym);

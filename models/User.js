@@ -11,6 +11,7 @@ const userSchema = new Schema({
   googleID: String,
   firstName: String,
   lastName: String,
+  fullName: String,
   acronym: String,
   gender: String,
   favGroups: [String],
