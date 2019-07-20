@@ -144,10 +144,7 @@ class LoginPage extends Component {
             className={this.state.titleBtnStyle}
             onClick={this.toggleForm}
           >
-            <Typing speed={200}>
-              <Typing.Delay ms={500} />
-              {this.state.titleBtnText}
-            </Typing>
+            {this.state.titleBtnText}
           </button>
         </div>
 
