@@ -6,4 +6,4 @@ It handles user authentication via Google and also a simple provided email and p
 
 Check out the app, register an account, and send prayer requests to friends and family here: https://intercessor-web.herokuapp.com/. Be prepared to wait a few seconds for the website to load for the first time, since Heroku puts to sleep sites that have not been used for over thirty minutes. (https://devcenter.heroku.com/articles/free-dyno-hours)
 
-Check out the rest of my portfolio here at github/yanghakim or on my portfolio: https://yanghakim.netlify.com/
+Check out the rest of my portfolio here at github/yanghakim or on my portfolio: https://yanghakim.com/
