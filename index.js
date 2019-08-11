@@ -1,3 +1,4 @@
+const sslRedirect = require("heroku-ssl-redirect");
 const express = require("express");
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
@@ -12,10 +13,7 @@ require("./models/Verses");
 
 require("./services/passport");
 
-mongoose.connect(
-  keys.mongoURI,
-  { useNewUrlParser: true }
-);
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
 const app = express();
 
@@ -28,6 +26,9 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+
+// enable ssl redirect
+app.use(sslRedirect());
 
 require("./routes/authRoutes")(app);
 require("./routes/prayerRoutes")(app);
