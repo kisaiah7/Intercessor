@@ -64,7 +64,7 @@ This software draws design inspiration from:
 ## You may also like...
 
 - [Elysian](https://github.com/yanghakim/elysian) - A Christian Notetaking app (wip)
-- [Ataraxia](https://github.com/yanghakim/elysian) - A Christian Personality adventure (wip)
+- [Ataraxia](https://github.com/yanghakim/ataraxia) - A Christian Personality adventure (wip)
 
 ---
 
