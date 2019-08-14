@@ -6,7 +6,9 @@
   <br>
 </h1>
 
-<h4 align="center">A prayer sharing app built upon the <a href="https://twitter.com/mern_io" target="_blank">MERN Stack</a>.</h4>
+<h4 align="center">A prayer sharing app built upon the <a href="https://twitter.com/mern_io" target="_blank">MERN Stack</a>.
+</h4>
+<p align="center">Landing page: <a href="https://intercessor.page" target="_blank">intercessor.page</a></p>
 <p align="center">
   <a href="https://scrutinizer-ci.com/g/yanghakim/intercessor/?branch=master">
     <img src="https://scrutinizer-ci.com/g/yanghakim/intercessor/badges/quality-score.png?b=master"
