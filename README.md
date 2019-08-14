@@ -2,7 +2,7 @@
   <br>
   <a href="https://intercessor-web.herokuapp.com/"><img src="https://raw.githubusercontent.com/yanghakim/intercessor/master/client/public/favicon.png" alt="intercessor" width="200"></a>
   <br>
-  yangha kim
+  intercessor
   <br>
 </h1>
 
