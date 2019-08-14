@@ -52,8 +52,6 @@ passport.use(
       passwordField: "password"
     },
     async (email, password, done) => {
-      console.log("REGIS", email, password);
-
       const existingUser = await User.findOne({ email: email });
 
       return done(null, existingUser);

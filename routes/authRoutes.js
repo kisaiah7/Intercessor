@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const User = mongoose.model("users");
 
 module.exports = app => {
-  /*
-      LOGIN/REGISTER GOOGLE STRATEGY
-  */
+  /**
+   * LOGIN/REGISTER GOOGLE STRATEGY
+   **/
   app.get(
     "/auth/google",
     passport.authenticate("google", {
@@ -27,9 +27,9 @@ module.exports = app => {
     }
   );
 
-  /*
-      LOGIN LOCAL STRATEGY
-  */
+  /**
+   * LOGIN LOCAL STRATEGY
+   **/
   app.post(
     "/api/login",
     handleLogin,
@@ -42,7 +42,6 @@ module.exports = app => {
   );
 
   async function handleLogin(req, res, next) {
-    console.log("login pressed");
     let email = req.body.email;
     let password = req.body.password;
 
@@ -167,7 +166,6 @@ module.exports = app => {
       if (err) {
         return console.log(err);
       }
-      console.log("yay");
       return next();
     });
   }
