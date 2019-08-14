@@ -15,13 +15,9 @@ module.exports = app => {
         success: false,
         message: "First name can't be blank."
       });
-    }
-
-    if (!lname) {
+    } else if (!lname) {
       return res.send({ success: false, message: "Last name can't be blank." });
-    }
-
-    if (currentPw || newPw || newVpw) {
+    } else if (currentPw || newPw || newVpw) {
       if (!user.validPassword(currentPw, user.password)) {
         return res.send({ success: false, message: "Incorrect password." });
       } else {
@@ -77,9 +73,8 @@ module.exports = app => {
     user.timer = timer;
     user.save((err, user) => {
       if (err) {
-        return console.log(err);
+        return err;
       }
-      console.log("updating...");
       res.send({ success: true, message: "Updating..." });
     });
   });
