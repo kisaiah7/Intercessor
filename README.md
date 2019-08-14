@@ -27,44 +27,44 @@
 
 ## Key Features
 
-* MERN Stack
-* React-Router
-* Redux Store, Thunk, Persist
-* Authentication (Passport.js)
-* Complex group schemas
-* Filter for favorited groups
-* Color-coded, theme-toggle
+  * MERN Stack
+  * React-Router
+  * Redux Store, Thunk, Persist
+  * Authentication (Passport.js)
+  * Complex group schemas
+  * Filter for favorited groups
+  * Color-coded, theme-toggle
 
 ## How To Use
 
-1. Create an account. Use Google Auth if applicable.
-2. Enter user info when prompted. Create a user acronym. 
-3. Go to SETTINGS. Search for your friends' GROUPS or create one and invite your friends.
-4. Choose your path to pray. (For others, yourself, or request prayer)
-5. Wait at SELAH, or edit the timer.
-6. (FOR OTHERS) Filter prayers by group or personal requests.
-7. (REQUEST PRAYER) Send prayer to other users/groups.
+ 1. Create an account. Use Google Auth if applicable.
+ 2. Enter user info when prompted. Create a user acronym. 
+ 3. Go to SETTINGS. Search for your friends' GROUPS or create one and invite your friends.
+ 4. Choose your path to pray. (For others, yourself, or request prayer)
+ 5. Wait at SELAH, or edit the timer.
+ 6. (FOR OTHERS) Filter prayers by group or personal requests.
+ 7. (REQUEST PRAYER) Send prayer to other users/groups.
 
 ## Credits
 
 This software uses the following open source packages:
 
-- [Node.js](https://nodejs.org/)
-- [React.js](https://reactjs.org/)
-- [Passport.js](http://www.passportjs.org/)
-- [Express.js](https://expressjs.com/)
-- [Redux](https://redux.js.org/)
+  * [Node.js](https://nodejs.org/)
+  * [React.js](https://reactjs.org/)
+  * [Passport.js](http://www.passportjs.org/)
+  * [Express.js](https://expressjs.com/)
+  * [Redux](https://redux.js.org/)
 
-- [Icon made by Freepik from www.flaticon.com](www.flaticon.com)
+  * [Icon made by Freepik from www.flaticon.com](www.flaticon.com)
 
 This software draws design inspiration from:
 
-- [Visions for the future internet](https://findingctrl.nesta.org.uk/)
+  * [Visions for the future internet](https://findingctrl.nesta.org.uk/)
 
 ## You may also like...
 
-- [Elysian](https://github.com/yanghakim/elysian) - A Christian Notetaking app (wip)
-- [Ataraxia](https://github.com/yanghakim/ataraxia) - A Christian Personality adventure (wip)
+  * [Elysian](https://github.com/yanghakim/elysian) - A Christian Notetaking app (wip)
+  * [Ataraxia](https://github.com/yanghakim/ataraxia) - A Christian Personality adventure (wip)
 
 ---
 
