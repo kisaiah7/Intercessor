@@ -44,6 +44,43 @@
  5. Wait at SELAH, or edit the timer.
  6. (FOR OTHERS) Filter prayers by group or personal requests.
  7. (REQUEST PRAYER) Send prayer to other users/groups.
+ 
+## What I Learned
+
+I : Create React App
+- after 2 weeks of learning Javascript, I started my first react app
+- learned about the utility of components and the virtual DOM
+- adopted SASS as a CSS extension
+- learned and utilized sass variables and mixins
+
+II : Server Side Foundation
+- restructuring project to accomodate for server (Node.JS) and client (Javascript) side code
+- installed and configured Express for route handling
+- setup MongoDB
+- installed and configured Mongoose for creating models and querying
+- setup dynamic listening to PORTS (for DEV and PROD)
+- installed and configured Passport for authentication
+
+III : Routing
+- handle routes with async/await
+- CRUD practices
+- structuring route files for each collection
+- installed Mongoose for creating models and querying
+- setup dynamic listening to PORTS (for DEV and PROD)
+- routes: login, filter prayers, group members, leave group, and many more
+
+IV : Redux
+- configure and connect Redux store with components, mapping state to props
+- setup actions, action creators, and reducers
+- redux thunk used for "functional" action creators
+- redux persist used for locally storing states
+- states: user data, user's groups, user's favorite groups
+
+V : QOL Practices
+- component architecture: breaking down UI by components (login vs register)
+- project architecture: grouping files by functionality (routes vs models) and type (sass vs jsx)
+- naming conventions: BEM class naming
+- routing architecture: breaking up big routes into middlewares
 
 ## Credits
 
