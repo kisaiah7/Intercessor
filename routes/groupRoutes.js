@@ -168,17 +168,17 @@ module.exports = app => {
   });
 
   app.post("/api/join_group", async (req, res) => {
-    let { group_acronym, user_acronym } = req.body;
+    let { group_acronym, userAcronym } = req.body;
 
     const group = await Group.findOne({
       acronym: group_acronym
     });
 
-    group.members.push(user_acronym);
+    group.members.push(userAcronym);
     group.save(async (err, group) => {
       if (!err) {
         const user = await User.findOne({
-          acronym: user_acronym
+          acronym: userAcronym
         });
         user.groups.push(group_acronym);
         user.save(() => {
@@ -189,18 +189,18 @@ module.exports = app => {
   });
 
   app.post("/api/leave_group", async (req, res) => {
-    let { group_acronym, user_acronym } = req.body;
+    let { group_acronym, userAcronym } = req.body;
 
     const group = await Group.findOne({
       acronym: group_acronym
     });
 
-    let index = group.members.indexOf(user_acronym);
+    let index = group.members.indexOf(userAcronym);
     group.members.splice(index, 1);
     group.save(async (err, group) => {
       if (!err) {
         const user = await User.findOne({
-          acronym: user_acronym
+          acronym: userAcronym
         });
 
         let index = user.groups.indexOf(group_acronym);

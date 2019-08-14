@@ -11,7 +11,7 @@ module.exports = app => {
       body,
       recipients,
       user_gender: req.user.gender,
-      user_acronym: req.user.acronym,
+      userAcronym: req.user.acronym,
       user_name: req.user.firstName + " " + req.user.lastName,
       dateSent: Date.now()
     }).save(() => {

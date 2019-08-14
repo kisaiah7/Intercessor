@@ -13,9 +13,9 @@ class UserInfo extends React.Component {
       fname: "",
       lname: "",
       email: "",
-      current_pw: "",
-      new_pw: "",
-      new_vpw: "",
+      currentPw: "",
+      newPw: "",
+      newVpw: "",
       btnText: "submit"
     };
   }
@@ -33,15 +33,15 @@ class UserInfo extends React.Component {
 
   onSubmit = async () => {
     // Grab state
-    const { fname, lname, email, current_pw, new_pw, new_vpw } = this.state;
+    const { fname, lname, email, currentPw, newPw, newVpw } = this.state;
 
-    const user = await axios.post("/api/user_info", {
+    const user = await axios.post("/api/userInfo", {
       fname,
       lname,
       email,
-      current_pw,
-      new_pw,
-      new_vpw
+      currentPw,
+      newPw,
+      newVpw
     });
 
     if (user.data.success) {
@@ -75,17 +75,17 @@ class UserInfo extends React.Component {
   };
   onCurrentPWChange = e => {
     this.setState({
-      current_pw: e.target.value
+      currentPw: e.target.value
     });
   };
   onNewPWChange = e => {
     this.setState({
-      new_pw: e.target.value
+      newPw: e.target.value
     });
   };
   onNewVPWChange = e => {
     this.setState({
-      new_vpw: e.target.value
+      newVpw: e.target.value
     });
   };
   resetSubmitBtn = e => {
@@ -149,7 +149,7 @@ class UserInfo extends React.Component {
             type="password"
             className="settings__userInfo__form__field"
             placeholder="current password"
-            value={this.state.current_pw}
+            value={this.state.currentPw}
             onChange={this.onCurrentPWChange}
           />
         </form>
@@ -158,7 +158,7 @@ class UserInfo extends React.Component {
             type="password"
             className="settings__userInfo__form__field"
             placeholder="new password"
-            value={this.state.new_pw}
+            value={this.state.newPw}
             onChange={this.onNewPWChange}
           />
         </form>
@@ -167,7 +167,7 @@ class UserInfo extends React.Component {
             type="password"
             className="settings__userInfo__form__field"
             placeholder="confirm new password"
-            value={this.state.new_vpw}
+            value={this.state.newVpw}
             onChange={this.onNewVPWChange}
           />
         </form>

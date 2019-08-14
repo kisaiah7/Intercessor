@@ -31,7 +31,7 @@ class PrayerFeed extends Component {
       selected_title: "",
       selected_body: "",
       selected_user_name: "",
-      selected_user_acronym: ""
+      selected_userAcronym: ""
     };
   }
 
@@ -61,7 +61,7 @@ class PrayerFeed extends Component {
         >
           <p>
             <span>
-              [{prayer.user_acronym}] {prayer.user_name} >{" "}
+              [{prayer.userAcronym}] {prayer.user_name} >{" "}
               {prayer.dateSent.toString().substring(5, 10)}:
             </span>{" "}
             {prayer.title}
@@ -78,7 +78,7 @@ class PrayerFeed extends Component {
       selected_title: prayer.title,
       selected_body: prayer.body,
       selected_user_name: prayer.user_name,
-      selected_user_acronym: prayer.user_acronym,
+      selected_userAcronym: prayer.userAcronym,
       selected_user_gender: prayer.user_gender
     });
   };
@@ -243,7 +243,7 @@ class PrayerFeed extends Component {
             title={this.state.selected_title}
             body={this.state.selected_body}
             user_name={this.state.selected_user_name}
-            user_acronym={this.state.selected_user_acronym}
+            userAcronym={this.state.selected_userAcronym}
             user_gender={this.state.selected_user_gender}
             exit={this.exitDetailPrayer}
           />

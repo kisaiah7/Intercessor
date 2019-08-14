@@ -163,10 +163,10 @@ class Groups extends React.Component {
   onUserInfoChange = e => {
     this.setState(
       {
-        user_info: e.target.value
+        userInfo: e.target.value
       },
       () => {
-        if (this.state.user_info !== "") {
+        if (this.state.userInfo !== "") {
           this.findUser();
         }
       }
@@ -212,10 +212,10 @@ class Groups extends React.Component {
       user_results: []
     });
     // Grab state
-    const { user_info } = this.state;
+    const { userInfo } = this.state;
 
     const user = await axios.post("/api/find_user", {
-      user_info
+      userInfo
     });
 
     if (user.data.success) {
@@ -464,7 +464,7 @@ class Groups extends React.Component {
               type="text"
               className="settings__groups__form__field"
               placeholder="find users (case sensitive)"
-              value={this.state.user_info}
+              value={this.state.userInfo}
               onChange={this.onUserInfoChange}
               onKeyDown={this._handleKeyDown}
             />

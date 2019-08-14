@@ -137,12 +137,12 @@ class GroupDetail extends Component {
 
   onSubmit = async () => {
     const group_acronym = this.props.group.acronym;
-    const user_acronym = this.props.auth.acronym;
+    const userAcronym = this.props.auth.acronym;
 
     if (this.state.btn_text === "leave group") {
       const leave_group = await axios.post("/api/leave_group", {
         group_acronym,
-        user_acronym
+        userAcronym
       });
       this.props.fetchUser();
 
@@ -156,7 +156,7 @@ class GroupDetail extends Component {
     } else {
       const join_group = await axios.post("/api/join_group", {
         group_acronym,
-        user_acronym
+        userAcronym
       });
       this.props.fetchUser();
 

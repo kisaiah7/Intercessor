@@ -13,7 +13,7 @@ class PrayerDetail extends Component {
       title: "",
       body: "",
       user_name: "",
-      user_acronym: "",
+      userAcronym: "",
       user_gender: "",
       toSanctuary: false
     };
@@ -25,7 +25,7 @@ class PrayerDetail extends Component {
       title,
       body,
       user_name,
-      user_acronym,
+      userAcronym,
       user_gender
     } = this.props;
 
@@ -34,7 +34,7 @@ class PrayerDetail extends Component {
       title,
       body,
       user_name,
-      user_acronym,
+      userAcronym,
       user_gender
     });
   }
@@ -80,7 +80,7 @@ class PrayerDetail extends Component {
           </div>
           <div className="detailPrayer__top-blurb">
             <p>
-              [{this.state.user_acronym}] {this.state.user_name} >{" "}
+              [{this.state.userAcronym}] {this.state.user_name} >{" "}
               {this.state.title}
             </p>
           </div>

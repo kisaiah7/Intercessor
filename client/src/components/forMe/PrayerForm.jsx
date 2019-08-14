@@ -123,13 +123,13 @@ class PrayerForm extends Component {
   };
 
   searchGroups = async () => {
-    const user_info = this.state.query;
+    const userInfo = this.state.query;
     const query = this.state.query;
     let search_groups;
     let query_results = [];
 
     const search_users = await axios.post("/api/find_user", {
-      user_info
+      userInfo
     });
 
     if (search_users.data.user) {
