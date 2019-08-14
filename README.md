@@ -53,6 +53,8 @@ This software uses the following open source packages:
 - [Express.js](https://expressjs.com/)
 - [Redux](https://redux.js.org/)
 
+- [Icon made by Freepik from www.flaticon.com](www.flaticon.com)
+
 This software draws design inspiration from:
 
 - [Visions for the future internet](https://findingctrl.nesta.org.uk/)
