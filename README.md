@@ -14,6 +14,10 @@
     <img src="https://scrutinizer-ci.com/g/yanghakim/intercessor/badges/quality-score.png?b=master"
          alt="scrutinizer">
   </a>
+  <a href="https://scrutinizer-ci.com/g/yanghakim/intercessor/?branch=master">
+    <img src="https://scrutinizer-ci.com/g/yanghakim/intercessor/badges/build.png?b=master"
+         alt="scrutinizer">
+  </a>
 </p>
 
 <p align="center">
